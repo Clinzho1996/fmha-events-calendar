@@ -119,28 +119,9 @@ const Login = ({navigation}) => {
               alignItems: 'center',
               textAlign: 'center',
             }}>
-            Welcome back, we are glad you {'\n'}came back.🙃
+            Welcome back, we are glad you came back.{'\n'} Login with your
+            unique password 🙃
           </Text>
-        </View>
-        <View style={styles.input}>
-          <Icon
-            name="person-outline"
-            color="#808080"
-            size={20}
-            style={{
-              borderWidth: 1,
-              padding: 5,
-              borderRadius: 6,
-              borderColor: '#808080',
-            }}
-          />
-          <TextInput
-            placeholder="Email address"
-            placeholderTextColor="#808080"
-            value={email}
-            onChangeText={text => setEmail(text)}
-            style={{fontSize: 16, color: '#808080', paddingLeft: 20}}
-          />
         </View>
         <View style={styles.input}>
           <Icon
@@ -188,25 +169,6 @@ const Login = ({navigation}) => {
             </TouchableOpacity>
           </View>
         </View>
-        <View>
-          <TouchableOpacity
-            style={{
-              marginTop: 0,
-              justifyContent: 'flex-end',
-              flexDirection: 'row',
-              paddingHorizontal: 20,
-            }}
-            onPress={() => navigation.navigate('Forgot')}>
-            <Text
-              style={{
-                fontSize: 16,
-                fontWeight: '600',
-                color: '#C4C4C4',
-              }}>
-              Forgot Password ?
-            </Text>
-          </TouchableOpacity>
-        </View>
         <View style={{paddingHorizontal: 20}}>
           <TouchableOpacity
             style={isLoading ? styles.buttonLoading : styles.btn}
@@ -219,27 +181,6 @@ const Login = ({navigation}) => {
                 {isLoading ? 'Loading' : 'Login'}
               </Text>
             )}
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'row',
-            marginTop: 10,
-          }}>
-          <Text style={{color: '#828282', fontSize: 16, marginRight: 10}}>
-            Don't have an account?
-          </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-            <Text
-              style={{
-                fontWeight: '600',
-                fontSize: 16,
-                color: '#99dd7a',
-              }}>
-              Register
-            </Text>
           </TouchableOpacity>
         </View>
       </View>

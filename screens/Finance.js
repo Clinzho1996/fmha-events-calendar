@@ -7,6 +7,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
+import PushNotification from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -30,11 +31,22 @@ const Finance = ({navigation}) => {
               name: 'Cash Planning Training @ Lagos',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'Cash Planning Training @ Lagos', // Notification message
+              date: new Date('2023-02-28T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-03-31') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Closure of Capital Accounts on the 31st',
               height: 50,
+            });
+
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'Closure of Capital Accounts on the 31st', // Notification message
+              date: new Date('2023-03-30T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-07-03') {
             // Custom event on December 15
