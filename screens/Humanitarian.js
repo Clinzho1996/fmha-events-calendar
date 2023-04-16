@@ -7,6 +7,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
+import PushNotification from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -30,11 +31,23 @@ const Humanitarian = ({navigation}) => {
               name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-22T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-05-24') {
             // Custom event on December 15
             items[strTime].push({
               name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-23T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-05-25') {
             // Custom event on December 15
@@ -42,11 +55,23 @@ const Humanitarian = ({navigation}) => {
               name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-24T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-05-26') {
             // Custom event on December 15
             items[strTime].push({
               name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-25T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-05-27') {
             // Custom event on December 15
@@ -54,11 +79,23 @@ const Humanitarian = ({navigation}) => {
               name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-26T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-05-28') {
             // Custom event on December 15
             items[strTime].push({
               name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-27T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-06-20') {
             // Custom event on December 15
@@ -66,11 +103,21 @@ const Humanitarian = ({navigation}) => {
               name: 'World Refugees Day on 20th',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: ' World Refugees Day on 20th', // Notification message
+              date: new Date('2023-06-19T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-06-30') {
             // Custom event on December 15
             items[strTime].push({
               name: 'World Day against Human Trafficking on the 30th',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'World Day against Human Trafficking on the 30th', // Notification message
+              date: new Date('2023-06-29T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-08-19') {
             // Custom event on December 15
@@ -78,11 +125,21 @@ const Humanitarian = ({navigation}) => {
               name: 'World Humanitarian Day on the 19th',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'World Humanitarian Day on the 19th', // Notification message
+              date: new Date('2023-08-18T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-08-30') {
             // Custom event on December 15
             items[strTime].push({
               name: 'International Day for the Disappear on the 30th',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'International Day for the Disappear on the 30th', // Notification message
+              date: new Date('2023-08-29T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-09-05') {
             // Custom event on December 15
@@ -90,11 +147,22 @@ const Humanitarian = ({navigation}) => {
               name: 'United Nations General Assembly in New York',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'United Nations General Assembly in New York', // Notification message
+              date: new Date('2023-09-04T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-09-10') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Executive Committee meeting of the United Nations High Commission on Refugees in New York ',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                'Executive Committee meeting of the United Nations High Commission on Refugees in New York ', // Notification message
+              date: new Date('2023-09-09T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-10-13') {
             // Custom event on December 15
@@ -102,11 +170,22 @@ const Humanitarian = ({navigation}) => {
               name: 'International Day for Disaster Risk Reduction on the 13th ',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                'International Day for Disaster Risk Reduction on the 13th', // Notification message
+              date: new Date('2023-10-12T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-11-01') {
             // Custom event on December 15
             items[strTime].push({
               name: 'National Migration Dialogue',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'National Migration Dialogue', // Notification message
+              date: new Date('2023-10-31T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-11-06') {
             // Custom event on December 15
@@ -114,11 +193,22 @@ const Humanitarian = ({navigation}) => {
               name: 'United Nations Climate Change 2023 (Cop 28)',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'United Nations Climate Change 2023 (Cop 28)', // Notification message
+              date: new Date('2023-11-05T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-12-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva ',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva', // Notification message
+              date: new Date('2023-12-12T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-12-14') {
             // Custom event on December 15
@@ -126,11 +216,23 @@ const Humanitarian = ({navigation}) => {
               name: 'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva  ',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva', // Notification message
+              date: new Date('2023-12-13T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-12-15') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva', // Notification message
+              date: new Date('2023-12-14T09:00:00'), // Date and time of the notification
             });
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);

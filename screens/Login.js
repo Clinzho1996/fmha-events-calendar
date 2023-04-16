@@ -25,9 +25,9 @@ const TRANSITIONS = ['fade', 'slide', 'none'];
 
 const Login = ({navigation}) => {
   const [hidden, setHidden] = useState(false);
-  const [email, setEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
   const changeStatusBarVisibility = () => setHidden(!hidden);
   const [statusBarStyle, setStatusBarStyle] = useState(STYLES[0]);
@@ -53,23 +53,14 @@ const Login = ({navigation}) => {
     }
   };
 
-  function Login() {
-    auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        setIsLoading(true);
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 3000);
-        console.log('User account created & signed in!');
-        navigation.navigate('Loading');
-      })
-      .catch(error => {
-        alert(error);
-
-        console.error(error);
-      });
-  }
+  const handleLogin = () => {
+    if (password === 'fmha2023') {
+      // Navigate to the home screen or perform any other action
+      navigation.navigate('Loading');
+    } else {
+      setErrorMsg('Invalid password');
+    }
+  };
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -146,7 +137,7 @@ const Login = ({navigation}) => {
               placeholderTextColor="#808080"
               secureTextEntry={!showPassword}
               value={password}
-              onChangeText={text => setPassword(text)}
+              onChangeText={setPassword}
               style={{
                 fontSize: 16,
                 color: '#808080',
@@ -169,10 +160,11 @@ const Login = ({navigation}) => {
             </TouchableOpacity>
           </View>
         </View>
+        <Text style={{color: 'red', paddingHorizontal: 20}}>{errorMsg}</Text>
         <View style={{paddingHorizontal: 20}}>
           <TouchableOpacity
             style={isLoading ? styles.buttonLoading : styles.btn}
-            onPress={() => navigation.navigate('Loading')}
+            onPress={handleLogin}
             disabled={isLoading}>
             {isLoading ? (
               <ActivityIndicator size="small" color="#ffffff" />

@@ -54,11 +54,22 @@ const Finance = ({navigation}) => {
               name: 'Budget Monitoring and Evaluation in the Six (6) geo-political zones   ',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                'Budget Monitoring and Evaluation in the Six (6) geo-political zones', // Notification message
+              date: new Date('2023-07-02T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-07-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Budget Defense @ Abuja',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'Budget Defense @ Abuja', // Notification message
+              date: new Date('2023-07-12T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-08-15') {
             // Custom event on December 15
@@ -66,11 +77,22 @@ const Finance = ({navigation}) => {
               name: 'IPSAS (International Public Sector Accounting  Standard Training and Workshop @ Kano',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                'IPSAS (International Public Sector Accounting  Standard Training and Workshop @ Kano', // Notification message
+              date: new Date('2023-08-14T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-08-18') {
             // Custom event on December 15
             items[strTime].push({
               name: '2023 Budget Preparation @ Abuja',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: '2023 Budget Preparation @ Abuja', // Notification message
+              date: new Date('2023-08-17T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-08-25') {
             // Custom event on December 15
@@ -78,17 +100,33 @@ const Finance = ({navigation}) => {
               name: 'Budget Defense @ Abuja',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'Budget Defense @ Abuja', // Notification message
+              date: new Date('2023-08-24T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-10-10') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Financial Modelling Training, reporting and revenue management',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message:
+                'Financial Modelling Training, reporting and revenue management', // Notification message
+              date: new Date('2023-10-09T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-11-12') {
             // Custom event on December 15
             items[strTime].push({
               name: 'ICAN Conference/ANAN MCPE @ Abuja',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              message: 'ICAN Conference/ANAN MCPE @ Abuja', // Notification message
+              date: new Date('2023-11-11T09:00:00'), // Date and time of the notification
             });
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
