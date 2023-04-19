@@ -39,7 +39,7 @@ const About = () => {
             About FMHA
           </Text>
           <Image
-            source={require('../assets/playstore.png')}
+            source={require('../resources/user.png')}
             style={{width: 50, height: 50, borderRadius: 10}}
           />
         </View>

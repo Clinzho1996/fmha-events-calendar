@@ -26,6 +26,7 @@ const Departments = ({navigation}) => {
           textAlign: 'center',
           fontWeight: '600',
           fontSize: 24,
+          color: '#000',
         }}>
         2023 Year Planner
       </Text>

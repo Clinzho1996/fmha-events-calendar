@@ -2,11 +2,13 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/self-closing-comp */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
+
+import PushNotification from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -16,6 +18,25 @@ const timeToString = time => {
 const Special = ({navigation}) => {
   const [items, setItems] = useState({});
   const now = new Date();
+
+  useEffect(() => {
+    createChannel();
+  });
+
+  const createChannel = () => {
+    PushNotification.createChannel({
+      channelId: 'fmhadmsd-events',
+      channelName: 'FMHADMSD Events',
+    });
+  };
+
+  const handleNotification = item => {
+    PushNotification.localNotification({
+      channelId: 'fmhadmsd-events',
+      title: 'FMHADMSD Events',
+      message: item.name,
+    });
+  };
 
   const loadItems = day => {
     setTimeout(() => {
@@ -30,11 +51,25 @@ const Special = ({navigation}) => {
               name: 'World Down Syndrome Day on 21st ',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'World Down Syndrome Day on 21st', // Notification message
+              date: new Date('2023-03-20T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-04-02') {
             // Custom event on December 15
             items[strTime].push({
               name: 'World Autism Day on 2nd ',
               height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'World Autism Day on 2nd', // Notification message
+              date: new Date('2023-04-01T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-09-23') {
             // Custom event on December 15
@@ -42,19 +77,49 @@ const Special = ({navigation}) => {
               name: 'International Day of Sign Languages on 23rd ',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'International Day of Sign Languages on 23rd', // Notification message
+              date: new Date('2023-09-22T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-04-25') {
             // Custom event on December 15
             items[strTime].push({
               name: 'International Week of the Deaf (Last Week)',
               height: 50,
             });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'International Week of the Deaf (Last Week)', // Notification message
+              date: new Date('2023-04-24T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-10-15') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva', // Notification message
+              date: new Date('2023-12-14T09:00:00'), // Date and time of the notification
+            });
             // Custom event on December 15
             items[strTime].push({
               name: 'White Cane Safety Day on 15th ',
               height: 50,
             });
           } else if (strTime === '2023-12-03') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva', // Notification message
+              date: new Date('2023-12-14T09:00:00'), // Date and time of the notification
+            });
             // Custom event on December 15
             items[strTime].push({
               name: 'International Day of Persons With Disabilities on 3rd',
@@ -81,7 +146,11 @@ const Special = ({navigation}) => {
 
   const renderItem = item => {
     return (
-      <TouchableOpacity style={{marginRight: 10, marginTop: 17}}>
+      <TouchableOpacity
+        style={{marginRight: 10, marginTop: 17}}
+        onPress={() => {
+          handleNotification(item);
+        }}>
         <Card
           style={{
             backgroundColor: '#fff',
@@ -93,7 +162,7 @@ const Special = ({navigation}) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}>
-              <Text style={{width: 200}}>{item.name}</Text>
+              <Text style={{width: 200, color: '#000'}}>{item.name}</Text>
               <Avatar.Text label="S" style={{backgroundColor: '#99dd7a'}} />
             </View>
           </Card.Content>

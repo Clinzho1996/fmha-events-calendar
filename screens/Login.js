@@ -13,10 +13,15 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity,
   Image,
+  PermissionsAndroid,
+  Platform,
+  NativeModules,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
-import auth from '@react-native-firebase/auth';
+import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
+
+import PushNotification from 'react-native-push-notification';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -53,9 +58,19 @@ const Login = ({navigation}) => {
     }
   };
 
-  const handleLogin = () => {
+  useEffect(() => {
+    createChannel();
+  });
+
+  const createChannel = () => {
+    PushNotification.createChannel({
+      channelId: 'fmhadmsd-events',
+      channelName: 'FMHADMSD Events',
+    });
+  };
+
+  const handleLogin = async () => {
     if (password === 'fmha2023') {
-      // Navigate to the home screen or perform any other action
       navigation.navigate('Loading');
     } else {
       setErrorMsg('Invalid password');
@@ -85,18 +100,18 @@ const Login = ({navigation}) => {
           flexDirection: 'column',
         }}>
         <Image
-          source={require('../assets/playstore.png')}
+          source={require('../resources/user.png')}
           style={{width: 80, height: 80, borderRadius: 10}}
         />
         <Text
           style={{
-            fontSize: 26,
+            fontSize: 22,
             fontWeight: '600',
             color: '#99dd7a',
             marginLeft: 10,
             paddingTop: 10,
           }}>
-          FMHA Events Calendar
+          FMHADMSD Event Calendar
         </Text>
       </View>
       <View style={styles.container}>

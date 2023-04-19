@@ -2,11 +2,12 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/self-closing-comp */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
+import PushNotification from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -17,6 +18,25 @@ const Social = ({navigation}) => {
   const [items, setItems] = useState({});
   const now = new Date();
 
+  useEffect(() => {
+    createChannel();
+  });
+
+  const createChannel = () => {
+    PushNotification.createChannel({
+      channelId: 'fmhadmsd-events',
+      channelName: 'FMHADMSD Events',
+    });
+  };
+
+  const handleNotification = item => {
+    PushNotification.localNotification({
+      channelId: 'fmhadmsd-events',
+      title: 'FMHADMSD Events',
+      message: item.name,
+    });
+  };
+
   const loadItems = day => {
     setTimeout(() => {
       for (let i = -15; i < 85; i++) {
@@ -24,383 +44,250 @@ const Social = ({navigation}) => {
         const strTime = timeToString(time);
         if (!items[strTime]) {
           items[strTime] = [];
-          if (strTime === '2023-01-12') {
+          if (strTime === '2023-05-23') {
             // Custom event on February
             items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
+              name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
             });
-          } else if (strTime === '2023-02-02') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-22T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-05-24') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
+              name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
             });
-          } else if (strTime === '2023-03-02') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-23T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-05-25') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
+              name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
             });
-          } else if (strTime === '2023-03-06') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-24T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-05-26') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Health Talk for staff of the Ministry',
+              name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
             });
-          } else if (strTime === '2023-04-10') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-25T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-05-27') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
+              name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
             });
-          } else if (strTime === '2023-04-15') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-26T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-05-28') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Annual Nationwide Verification exercise in the Headquarters and Out-station ',
+              name: '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia',
               height: 50,
             });
-          } else if (strTime === '2023-05-01') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                '7th Global Platform for Disaster Risk Reduction from 23rd – 28th in Bali, Indonesia', // Notification message
+              date: new Date('2023-05-27T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-06-20') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium ',
+              name: 'World Refugees Day on 20th',
               height: 50,
             });
-          } else if (strTime === '2023-05-10') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: ' World Refugees Day on 20th', // Notification message
+              date: new Date('2023-06-19T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-06-30') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Workers Day celebration in collaboration with the Union on the 1st @ the Eagle Square',
+              name: 'World Day against Human Trafficking on the 30th',
               height: 50,
             });
-          } else if (strTime === '2023-05-14') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'World Day against Human Trafficking on the 30th', // Notification message
+              date: new Date('2023-06-29T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-08-19') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Training Programmes for staff of the Ministry with the OHCSF',
+              name: 'World Humanitarian Day on the 19th',
               height: 50,
             });
-          } else if (strTime === '2023-06-02') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'World Humanitarian Day on the 19th', // Notification message
+              date: new Date('2023-08-18T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-08-30') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
+              name: 'International Day for the Disappear on the 30th',
               height: 50,
             });
-          } else if (strTime === '2023-06-07') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'International Day for the Disappear on the 30th', // Notification message
+              date: new Date('2023-08-29T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-09-05') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Union Week celebration',
+              name: 'United Nations General Assembly in New York',
               height: 50,
             });
-          } else if (strTime === '2023-06-09') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'United Nations General Assembly in New York', // Notification message
+              date: new Date('2023-09-04T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-09-10') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Federal Civil Service Week ',
+              name: 'Executive Committee meeting of the United Nations High Commission on Refugees in New York ',
               height: 50,
             });
-          } else if (strTime === '2023-06-12') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                'Executive Committee meeting of the United Nations High Commission on Refugees in New York ', // Notification message
+              date: new Date('2023-09-09T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-10-13') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Award and Recognition with OHCSF',
+              name: 'International Day for Disaster Risk Reduction on the 13th ',
               height: 50,
             });
-          } else if (strTime === '2023-06-15') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                'International Day for Disaster Risk Reduction on the 13th', // Notification message
+              date: new Date('2023-10-12T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-11-01') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Health Talk for staff of the Ministry',
+              name: 'National Migration Dialogue',
               height: 50,
             });
-          } else if (strTime === '2023-06-18') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'National Migration Dialogue', // Notification message
+              date: new Date('2023-10-31T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-11-06') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Junior Staff Promotion exercise for officers on SGL. 03 – 05 in the Headquarters and Out-stations',
+              name: 'United Nations Climate Change 2023 (Cop 28)',
               height: 50,
             });
-          } else if (strTime === '2023-06-06') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'United Nations Climate Change 2023 (Cop 28)', // Notification message
+              date: new Date('2023-11-05T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-12-13') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
+              name: 'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva ',
               height: 50,
             });
-          } else if (strTime === '2023-06-06') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva', // Notification message
+              date: new Date('2023-12-12T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-06-07') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
-            });
-          } else if (strTime === '2023-06-08') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
-            });
-          } else if (strTime === '2023-06-09') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
-            });
-          } else if (strTime === '2023-06-10') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
-            });
-          } else if (strTime === '2023-06-11') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
-            });
-          } else if (strTime === '2023-06-12') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
-            });
-          } else if (strTime === '2023-06-13') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
-            });
-          } else if (strTime === '2023-07-01') {
+          } else if (strTime === '2023-12-14') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva  ',
               height: 50,
             });
-          } else if (strTime === '2023-07-05') {
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva', // Notification message
+              date: new Date('2023-12-13T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-12-15') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Sports Seminar',
+              name: 'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva',
               height: 50,
             });
-          } else if (strTime === '2023-08-01') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
-              height: 50,
-            });
-          } else if (strTime === '2023-08-08') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Training Programme for the staff of the Ministry with the OHCSF',
-              height: 50,
-            });
-          } else if (strTime === '2023-09-01') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
-              height: 50,
-            });
-          } else if (strTime === '2023-09-12') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Union Seminar',
-              height: 50,
-            });
-          } else if (strTime === '2023-09-16') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Health Talk',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-01') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-06') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the BPP',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-07') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the BPP',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-08') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the BPP',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-09') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the BPP',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-10') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the BPP',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-11') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the BPP',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-12') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the BPP',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-13') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the BPP',
-              height: 50,
-            });
-          } else if (strTime === '2023-10-01') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Training Programme for the staff of the Ministry with the OHCSF  ',
-              height: 50,
-            });
-          } else if (strTime === '2023-11-01') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium   ',
-              height: 50,
-            });
-          } else if (strTime === '2023-11-06') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OAGF',
-              height: 50,
-            });
-          } else if (strTime === '2023-11-07') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OAGF',
-              height: 50,
-            });
-          } else if (strTime === '2023-11-08') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OAGF',
-              height: 50,
-            });
-          } else if (strTime === '2023-11-09') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OAGF',
-              height: 50,
-            });
-          } else if (strTime === '2023-11-10') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OAGF',
-              height: 50,
-            });
-          } else if (strTime === '2023-11-11') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OAGF',
-              height: 50,
-            });
-          } else if (strTime === '2023-11-12') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OAGF',
-              height: 50,
-            });
-          } else if (strTime === '2023-11-13') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OAGF',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-01') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-06') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OHCSF',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-07') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OHCSF',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-08') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OHCSF',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-09') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OHCSF',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-10') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OHCSF',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-11') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OHCSF',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-12') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OHCSF',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-13') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the OHCSF',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-16') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Federation of Public Service Games',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-19') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Training programme for staff of the Ministry with OHCSF ',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-22') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Health Talk',
-              height: 50,
-            });
-          } else if (strTime === '2023-12-23') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Awards and Recognition with OHCSF',
-              height: 50,
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva', // Notification message
+              date: new Date('2023-12-14T09:00:00'), // Date and time of the notification
             });
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
@@ -423,7 +310,11 @@ const Social = ({navigation}) => {
 
   const renderItem = item => {
     return (
-      <TouchableOpacity style={{marginRight: 10, marginTop: 17}}>
+      <TouchableOpacity
+        style={{marginRight: 10, marginTop: 17}}
+        onPress={() => {
+          handleNotification(item);
+        }}>
         <Card
           style={{
             backgroundColor: '#fff',
@@ -435,8 +326,8 @@ const Social = ({navigation}) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}>
-              <Text style={{width: 200}}>{item.name}</Text>
-              <Avatar.Text label="S" style={{backgroundColor: '#99dd7a'}} />
+              <Text style={{width: 200, color: '#000'}}>{item.name}</Text>
+              <Avatar.Text label="H" style={{backgroundColor: '#99dd7a'}} />
             </View>
           </Card.Content>
         </Card>

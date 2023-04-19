@@ -11,9 +11,6 @@ import {
   Image,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
-import auth from '@react-native-firebase/auth';
-import {useNavigation} from '@react-navigation/native';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -24,22 +21,6 @@ const Onboarding = ({navigation}) => {
   const [hidden, setHidden] = useState(false);
 
   const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const unsubscribe = auth().onAuthStateChanged(user => {
-  //     if (user) {
-  //       // User is signed in
-  //       setLoading(false);
-  //       navigation.replace('Home');
-  //     } else {
-  //       // No user is signed in
-  //       setLoading(false);
-  //       navigation.replace('Login');
-  //     }
-  //   });
-
-  //   return unsubscribe;
-  // }, [navigation]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -93,17 +74,17 @@ const Onboarding = ({navigation}) => {
           flexDirection: 'row',
         }}>
         <Image
-          source={require('../assets/playstore.png')}
+          source={require('../resources/user.png')}
           style={{width: 50, height: 50, borderRadius: 10}}
         />
         <Text
           style={{
-            fontSize: 26,
+            fontSize: 22,
             fontWeight: '600',
             color: '#99dd7a',
             marginLeft: 10,
           }}>
-          FMHA Event Calendar
+          FMHADMSD Event Calendar
         </Text>
       </View>
     </View>

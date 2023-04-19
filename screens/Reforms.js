@@ -2,11 +2,12 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/self-closing-comp */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
+import PushNotification from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -16,6 +17,25 @@ const timeToString = time => {
 const Reforms = ({navigation}) => {
   const [items, setItems] = useState({});
   const now = new Date();
+
+  useEffect(() => {
+    createChannel();
+  });
+
+  const createChannel = () => {
+    PushNotification.createChannel({
+      channelId: 'fmhadmsd-events',
+      channelName: 'FMHADMSD Events',
+    });
+  };
+
+  const handleNotification = item => {
+    PushNotification.localNotification({
+      channelId: 'fmhadmsd-events',
+      title: 'FMHADMSD Events',
+      message: item.name,
+    });
+  };
 
   const loadItems = day => {
     setTimeout(() => {
@@ -519,7 +539,11 @@ const Reforms = ({navigation}) => {
 
   const renderItem = item => {
     return (
-      <TouchableOpacity style={{marginRight: 10, marginTop: 17}}>
+      <TouchableOpacity
+        style={{marginRight: 10, marginTop: 17}}
+        onPress={() => {
+          handleNotification(item);
+        }}>
         <Card
           style={{
             backgroundColor: '#fff',
@@ -531,7 +555,7 @@ const Reforms = ({navigation}) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}>
-              <Text style={{width: 200}}>{item.name}</Text>
+              <Text style={{width: 200, color: '#000'}}>{item.name}</Text>
               <Avatar.Text label="R" style={{backgroundColor: '#99dd7a'}} />
             </View>
           </Card.Content>

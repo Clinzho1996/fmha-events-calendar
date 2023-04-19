@@ -2,7 +2,7 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/self-closing-comp */
 
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
@@ -17,6 +17,25 @@ const timeToString = time => {
 const Finance = ({navigation}) => {
   const [items, setItems] = useState({});
   const now = new Date();
+
+  useEffect(() => {
+    createChannel();
+  });
+
+  const createChannel = () => {
+    PushNotification.createChannel({
+      channelId: 'fmhadmsd-events',
+      channelName: 'FMHADMSD Events',
+    });
+  };
+
+  const handleNotification = item => {
+    PushNotification.localNotification({
+      channelId: 'fmhadmsd-events',
+      title: 'FMHADMSD Events',
+      message: item.name,
+    });
+  };
 
   const loadItems = day => {
     setTimeout(() => {
@@ -33,6 +52,8 @@ const Finance = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
               message: 'Cash Planning Training @ Lagos', // Notification message
               date: new Date('2023-02-28T09:00:00'), // Date and time of the notification
             });
@@ -45,6 +66,8 @@ const Finance = ({navigation}) => {
 
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
               message: 'Closure of Capital Accounts on the 31st', // Notification message
               date: new Date('2023-03-30T09:00:00'), // Date and time of the notification
             });
@@ -56,6 +79,8 @@ const Finance = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
               message:
                 'Budget Monitoring and Evaluation in the Six (6) geo-political zones', // Notification message
               date: new Date('2023-07-02T09:00:00'), // Date and time of the notification
@@ -68,6 +93,8 @@ const Finance = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
               message: 'Budget Defense @ Abuja', // Notification message
               date: new Date('2023-07-12T09:00:00'), // Date and time of the notification
             });
@@ -79,6 +106,8 @@ const Finance = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
               message:
                 'IPSAS (International Public Sector Accounting  Standard Training and Workshop @ Kano', // Notification message
               date: new Date('2023-08-14T09:00:00'), // Date and time of the notification
@@ -91,6 +120,8 @@ const Finance = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
               message: '2023 Budget Preparation @ Abuja', // Notification message
               date: new Date('2023-08-17T09:00:00'), // Date and time of the notification
             });
@@ -102,6 +133,8 @@ const Finance = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
               message: 'Budget Defense @ Abuja', // Notification message
               date: new Date('2023-08-24T09:00:00'), // Date and time of the notification
             });
@@ -113,6 +146,8 @@ const Finance = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
               message:
                 'Financial Modelling Training, reporting and revenue management', // Notification message
               date: new Date('2023-10-09T09:00:00'), // Date and time of the notification
@@ -125,6 +160,8 @@ const Finance = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
               message: 'ICAN Conference/ANAN MCPE @ Abuja', // Notification message
               date: new Date('2023-11-11T09:00:00'), // Date and time of the notification
             });
@@ -149,7 +186,11 @@ const Finance = ({navigation}) => {
 
   const renderItem = item => {
     return (
-      <TouchableOpacity style={{marginRight: 10, marginTop: 17}}>
+      <TouchableOpacity
+        style={{marginRight: 10, marginTop: 17}}
+        onPress={() => {
+          handleNotification(item);
+        }}>
         <Card
           style={{
             backgroundColor: '#fff',
@@ -161,7 +202,7 @@ const Finance = ({navigation}) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}>
-              <Text style={{width: 200}}>{item.name}</Text>
+              <Text style={{width: 200, color: '#000'}}>{item.name}</Text>
               <Avatar.Text label="F" style={{backgroundColor: '#99dd7a'}} />
             </View>
           </Card.Content>

@@ -9,6 +9,10 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+
+import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;  // <--- Import Package
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -58,5 +62,19 @@ public class MainApplication extends Application implements ReactApplication {
       DefaultNewArchitectureEntryPoint.load();
     }
     ReactNativeFlipper.initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
+    
+    // Define the notification channel ID
+    String channelId = "my_channel_id";
+
+    // Create a NotificationChannel object
+    CharSequence channelName = "FMHADMSD Events";
+    String channelDescription = "2023 Event Calendar";
+    int importance = NotificationManager.IMPORTANCE_DEFAULT;
+    NotificationChannel notificationChannel = new NotificationChannel(channelId, channelName, importance);
+    notificationChannel.setDescription(channelDescription);
+
+    // Register the NotificationChannel with the NotificationManager
+    NotificationManager notificationManager = getSystemService(NotificationManager.class);
+    notificationManager.createNotificationChannel(notificationChannel);
   }
 }

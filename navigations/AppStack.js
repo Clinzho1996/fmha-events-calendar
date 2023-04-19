@@ -7,11 +7,9 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import Login from '../screens/Login';
-import Register from '../screens/Register';
 import Loading from '../screens/Loading';
 import Onboarding from '../screens/Onboarding';
 import Main from '../screens/Main';
-import Forgot from '../screens/Forgot';
 import Planning from '../screens/Planning';
 import HumanRes from '../screens/HumanRes';
 import Reforms from '../screens/Reforms';
@@ -32,10 +30,8 @@ const AppStack = () => {
       }}>
       <Stack.Screen name="Onboarding" component={Onboarding} />
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="Loading" component={Loading} />
       <Stack.Screen name="Main" component={Main} />
-      <Stack.Screen name="Forgot" component={Forgot} />
       <Stack.Screen name="Planning" component={Planning} />
       <Stack.Screen name="HumanRes" component={HumanRes} />
       <Stack.Screen name="Reforms" component={Reforms} />

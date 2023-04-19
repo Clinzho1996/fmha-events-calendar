@@ -11,7 +11,7 @@ const Profile = ({navigation}) => {
       <View style={{paddingHorizontal: 20}}>
         <TouchableOpacity
           style={styles.btn}
-          onPress={() => navigation.navigate('Loading')}>
+          onPress={() => navigation.navigate('Login')}>
           <Text style={styles.btnText}>Log Out</Text>
         </TouchableOpacity>
       </View>
