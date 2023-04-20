@@ -166,7 +166,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('General')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   General Services Department
                 </Text>
@@ -180,7 +182,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('Procure')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   Procurement Department
                 </Text>
@@ -194,7 +198,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('Legal')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   Legal Services Department
                 </Text>
@@ -208,7 +214,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('SpecialDuties')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   Special Duties Department
                 </Text>
@@ -222,7 +230,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('Press')}>
                 <Text style={{color: '#000', fontSize: 16}}>Press Unit</Text>
                 <Icon name="caret-forward-outline" size={25} color="#38c275" />
               </TouchableOpacity>
@@ -234,7 +244,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('NationalCom')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   National Commission for Refugees, Migrants and Internally
                   Displaced Persons (NCFRMI)
@@ -249,7 +261,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('NationEmer')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   National Emergency Management Agency (NEMA)
                 </Text>
@@ -263,7 +277,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('NationalDis')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   National Commission for Persons with Disabilities (NCPWD)
                 </Text>
@@ -277,7 +293,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('NationalSen')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   National Senior Citizens Centre
                 </Text>
@@ -291,7 +309,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('NationalAgency')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   National Agency for the Prohibition of Trafficking in Persons
                   (NAPTIP)
@@ -306,7 +326,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('North')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   North East Development Commission (NEDC)
                 </Text>
@@ -320,7 +342,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('Senior')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   Senior Special Assistant – Sustainable Development Goals
                   (SDGs)

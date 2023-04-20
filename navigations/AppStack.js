@@ -18,6 +18,18 @@ import Finance from '../screens/Finance';
 import Internal from '../screens/Internal';
 import Humanitarian from '../screens/Humanitarian';
 import Social from '../screens/Social';
+import General from '../screens/General';
+import Procure from '../screens/Procure';
+import Legal from '../screens/Legal';
+import SpecialDuties from '../screens/SpecialDuties';
+import Press from '../screens/Press';
+import NationalCom from '../screens/NationalCom';
+import NationEmer from '../screens/NationEmer';
+import NationalDis from '../screens/NationalDis';
+import NationalSen from '../screens/NationalSen';
+import NationalAgency from '../screens/NationalAgency';
+import North from '../screens/North';
+import Senior from '../screens/Senior';
 
 const AppStack = () => {
   const Stack = createStackNavigator();
@@ -40,6 +52,18 @@ const AppStack = () => {
       <Stack.Screen name="Internal" component={Internal} />
       <Stack.Screen name="Humanitarian" component={Humanitarian} />
       <Stack.Screen name="Social" component={Social} />
+      <Stack.Screen name="General" component={General} />
+      <Stack.Screen name="Procure" component={Procure} />
+      <Stack.Screen name="Legal" component={Legal} />
+      <Stack.Screen name="SpecialDuties" component={SpecialDuties} />
+      <Stack.Screen name="Press" component={Press} />
+      <Stack.Screen name="NationalCom" component={NationalCom} />
+      <Stack.Screen name="NationEmer" component={NationEmer} />
+      <Stack.Screen name="NationalDis" component={NationalDis} />
+      <Stack.Screen name="NationalSen" component={NationalSen} />
+      <Stack.Screen name="NationalAgency" component={NationalAgency} />
+      <Stack.Screen name="North" component={North} />
+      <Stack.Screen name="Senior" component={Senior} />
     </Stack.Navigator>
   );
 };
