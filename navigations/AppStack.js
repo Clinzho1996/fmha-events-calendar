@@ -30,6 +30,11 @@ import NationalSen from '../screens/NationalSen';
 import NationalAgency from '../screens/NationalAgency';
 import North from '../screens/North';
 import Senior from '../screens/Senior';
+import NationalHome from '../screens/NationalHome';
+import Npower from '../screens/Npower';
+import Govern from '../screens/Govern';
+import NationalCash from '../screens/NationalCash';
+import Events from '../screens/Events';
 
 const AppStack = () => {
   const Stack = createStackNavigator();
@@ -64,6 +69,11 @@ const AppStack = () => {
       <Stack.Screen name="NationalAgency" component={NationalAgency} />
       <Stack.Screen name="North" component={North} />
       <Stack.Screen name="Senior" component={Senior} />
+      <Stack.Screen name="NationalHome" component={NationalHome} />
+      <Stack.Screen name="Npower" component={Npower} />
+      <Stack.Screen name="Govern" component={Govern} />
+      <Stack.Screen name="NationalCash" component={NationalCash} />
+      <Stack.Screen name="Events" component={Events} />
     </Stack.Navigator>
   );
 };

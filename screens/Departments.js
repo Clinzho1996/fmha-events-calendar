@@ -359,7 +359,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('NationalHome')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   National Home Grown School Feeding Programme (NHGSFP)
                 </Text>
@@ -373,7 +375,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('Npower')}>
                 <Text style={{color: '#000', fontSize: 16}}>N/POWER</Text>
                 <Icon name="caret-forward-outline" size={25} color="#38c275" />
               </TouchableOpacity>
@@ -385,7 +389,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('Govern')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   Government Enterprise Empowerment Programme (GEEP)
                 </Text>
@@ -399,7 +405,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('NationalCash')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   National Cash Transfer Office (NCTO)
                 </Text>
@@ -413,7 +421,9 @@ const Departments = ({navigation}) => {
               marginBottom: 15,
             }}>
             <Card.Content>
-              <TouchableOpacity style={styles.card}>
+              <TouchableOpacity
+                style={styles.card}
+                onPress={() => navigation.navigate('Events')}>
                 <Text style={{color: '#000', fontSize: 16}}>
                   Events / Programmes and Commemoration Days of the Humanitarian
                   Sector
