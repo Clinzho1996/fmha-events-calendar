@@ -24,6 +24,7 @@ const NationalDis = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -31,6 +32,7 @@ const NationalDis = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -52,6 +54,7 @@ const NationalDis = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -65,6 +68,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'National Summit on Access to Justice for PWDs on 23rd ', // Notification message
@@ -77,6 +81,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Children’s Day on the 27th ', // Notification message
@@ -89,6 +94,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'World Day against Child Labour on the 12th', // Notification message
@@ -101,6 +107,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -114,6 +121,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -127,6 +135,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -140,6 +149,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -153,6 +163,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -166,6 +177,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: '16 Days of Activism from the 25th ', // Notification message
@@ -178,6 +190,7 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:

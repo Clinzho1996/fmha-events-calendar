@@ -24,6 +24,7 @@ const NationalAgency = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -31,6 +32,7 @@ const NationalAgency = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -52,6 +54,7 @@ const NationalAgency = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -65,6 +68,7 @@ const NationalAgency = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -78,6 +82,7 @@ const NationalAgency = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -91,6 +96,7 @@ const NationalAgency = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -104,6 +110,7 @@ const NationalAgency = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -117,6 +124,7 @@ const NationalAgency = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:

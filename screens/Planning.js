@@ -25,6 +25,7 @@ const Planning = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -32,6 +33,7 @@ const Planning = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -297,7 +299,7 @@ const Planning = ({navigation}) => {
               name: 'Annual Coordination meeting and target setting for NGOs',
               height: 50,
             });
-          } else if (strTime === '2023-10-08') {
+          } else if (strTime === '2023-10-09') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Training and Workshops on Monitoring and Evaluation in collaboration with the Federal Ministry of Finance, Budget, and National Planning.',
@@ -345,7 +347,7 @@ const Planning = ({navigation}) => {
               name: 'Quarterly Report of the Ministerial mandate to the Central Coordinating Delivery Unit (CCDU)  ',
               height: 50,
             });
-          } else if (strTime === '2023-12-10') {
+          } else if (strTime === '2023-12-12') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Management meetings with heads of agencies ',
@@ -357,7 +359,7 @@ const Planning = ({navigation}) => {
               name: 'Quarterly Sector Monitoring of Projects for the Ministry and its Agencies',
               height: 50,
             });
-          } else if (strTime === '2023-12-17') {
+          } else if (strTime === '2023-12-18') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Tracking of updates for the development and population of the Unified National Social Register',

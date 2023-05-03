@@ -24,6 +24,7 @@ const Npower = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -31,6 +32,7 @@ const Npower = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -52,6 +54,7 @@ const Npower = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -65,6 +68,7 @@ const Npower = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -78,6 +82,7 @@ const Npower = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:

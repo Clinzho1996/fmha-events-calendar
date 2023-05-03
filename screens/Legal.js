@@ -24,6 +24,7 @@ const Legal = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -31,6 +32,7 @@ const Legal = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -52,37 +54,40 @@ const Legal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Training on Freedom of Information (FOI) Act in collaboration with the PRS Department  ', // Notification message
               date: new Date('2023-04-21T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-08-12') {
+          } else if (strTime === '2023-08-14') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Annual Conference of the Nigerian Bar Association (NBA) @ Abuja',
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Annual Conference of the Nigerian Bar Association (NBA) @ Abuja', // Notification message
-              date: new Date('2023-08-11T09:00:00'), // Date and time of the notification
+              date: new Date('2023-08-13T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-11-18') {
+          } else if (strTime === '2023-11-20') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Specialised Training on Alternate Dispute Resolution and Legal Writing Skills in collaboration with the Nigerian Institute of Advance Legal Studies @ Lagos State ',
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Specialised Training on Alternate Dispute Resolution and Legal Writing Skills in collaboration with the Nigerian Institute of Advance Legal Studies @ Lagos State ', // Notification message
-              date: new Date('2023-11-17T09:00:00'), // Date and time of the notification
+              date: new Date('2023-11-19T09:00:00'), // Date and time of the notification
             });
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);

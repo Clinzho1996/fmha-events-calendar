@@ -24,6 +24,7 @@ const SpecialDuties = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -31,6 +32,7 @@ const SpecialDuties = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -52,6 +54,7 @@ const SpecialDuties = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -65,6 +68,7 @@ const SpecialDuties = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -78,6 +82,7 @@ const SpecialDuties = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -91,6 +96,7 @@ const SpecialDuties = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Creation of Charity and Endowment Fund', // Notification message
@@ -103,6 +109,7 @@ const SpecialDuties = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -116,6 +123,7 @@ const SpecialDuties = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -129,36 +137,39 @@ const SpecialDuties = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Special cooperate programmes on Women empowerment and peacebuilding in fragile Zones (IDPs and Returning Communities) @ BAY States', // Notification message
               date: new Date('2023-06-18T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-11-17') {
+          } else if (strTime === '2023-11-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Survey of Victims of Terrorism (VoT)',
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Survey of Victims of Terrorism (VoT)', // Notification message
-              date: new Date('2023-11-16T09:00:00'), // Date and time of the notification
+              date: new Date('2023-11-12T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-12-15') {
+          } else if (strTime === '2023-12-11') {
             // Custom event on December 15
             items[strTime].push({
               name: 'State Actos (Federal, State & LGA’s) Coordination and liaison',
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'State Actos (Federal, State & LGA’s) Coordination and liaison', // Notification message
-              date: new Date('2023-12-14T09:00:00'), // Date and time of the notification
+              date: new Date('2023-12-10T09:00:00'), // Date and time of the notification
             });
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);

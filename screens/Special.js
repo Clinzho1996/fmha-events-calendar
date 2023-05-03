@@ -25,6 +25,7 @@ const Special = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -32,6 +33,7 @@ const Special = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -53,6 +55,7 @@ const Special = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'World Down Syndrome Day on 21st', // Notification message
@@ -66,6 +69,7 @@ const Special = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'World Autism Day on 2nd', // Notification message
@@ -79,6 +83,7 @@ const Special = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'International Day of Sign Languages on 23rd', // Notification message
@@ -92,14 +97,72 @@ const Special = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'International Week of the Deaf (Last Week)', // Notification message
               date: new Date('2023-04-24T09:00:00'), // Date and time of the notification
             });
+          } else if (strTime === '2023-04-26') {
+            // Custom event on December 15
+            items[strTime].push({
+              name: 'International Week of the Deaf (Last Week)',
+              height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'International Week of the Deaf (Last Week)', // Notification message
+              date: new Date('2023-04-25T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-04-27') {
+            // Custom event on December 15
+            items[strTime].push({
+              name: 'International Week of the Deaf (Last Week)',
+              height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'International Week of the Deaf (Last Week)', // Notification message
+              date: new Date('2023-04-26T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-04-28') {
+            // Custom event on December 15
+            items[strTime].push({
+              name: 'International Week of the Deaf (Last Week)',
+              height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'International Week of the Deaf (Last Week)', // Notification message
+              date: new Date('2023-04-27T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-04-29') {
+            // Custom event on December 15
+            items[strTime].push({
+              name: 'International Week of the Deaf (Last Week)',
+              height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message: 'International Week of the Deaf (Last Week)', // Notification message
+              date: new Date('2023-04-28T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-10-15') {
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -114,6 +177,7 @@ const Special = ({navigation}) => {
           } else if (strTime === '2023-12-03') {
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:

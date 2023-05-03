@@ -24,6 +24,7 @@ const Internal = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -31,6 +32,7 @@ const Internal = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -52,6 +54,7 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -66,6 +69,7 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -80,6 +84,7 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -94,6 +99,7 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -108,6 +114,7 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -122,6 +129,7 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Internal Auditing Training @ Lagos and katsina', // Notification message
@@ -135,6 +143,7 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -149,6 +158,7 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -163,25 +173,26 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Inspection of National Rehabilitation centre in collaboration with the Special Needs Department @ Abuja', // Notification message
               date: new Date('2023-09-09T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-09-14') {
+          } else if (strTime === '2023-09-25') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones',
+              name: 'Internal Auditing Training @ Lagos and katsina',
               height: 50,
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
-              message:
-                'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones', // Notification message
-              date: new Date('2023-09-13T09:00:00'), // Date and time of the notification
+              message: 'Internal Auditing Training @ Lagos and katsina', // Notification message
+              date: new Date('2023-09-24T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-11-04') {
             // Custom event on December 15
@@ -191,11 +202,27 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Inspection of Braille Press and Library Centres in collaboration with the Special Needs Department in the six (6) geo-political zones', // Notification message
               date: new Date('2023-11-03T09:00:00'), // Date and time of the notification
+            });
+          } else if (strTime === '2023-11-22') {
+            // Custom event on December 15
+            items[strTime].push({
+              name: 'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones',
+              height: 50,
+            });
+            // Schedule local notification for April 15
+            PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones', // Notification message
+              date: new Date('2023-11-21T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-12-04') {
             // Custom event on December 15
@@ -205,6 +232,7 @@ const Internal = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:

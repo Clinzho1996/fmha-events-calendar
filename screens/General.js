@@ -84,7 +84,7 @@ const General = ({navigation}) => {
                 'Supervision of the proposed Construction of Farm to Kitchen Centre (NSIP Projects) located across the geopolitical zones  ', // Notification message
               date: new Date('2023-05-17T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-06-11') {
+          } else if (strTime === '2023-06-12') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Quarterly supervision and monitoring of all the Ministry’s projects in order to conform with specifications @ the Headquarters, States and Cluster offices',
@@ -95,9 +95,9 @@ const General = ({navigation}) => {
               channelName: 'FMHADMSD Events',
               message:
                 'Quarterly supervision and monitoring of all the Ministry’s projects in order to conform with specifications @ the Headquarters, States and Cluster offices', // Notification message
-              date: new Date('2023-06-10T09:00:00'), // Date and time of the notification
+              date: new Date('2023-06-11T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-06-18') {
+          } else if (strTime === '2023-06-19') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Quarterly Stock takings of items/ records in the Headquarters and across the warehouses in the 36 States and Abuja  ',
@@ -108,7 +108,7 @@ const General = ({navigation}) => {
               channelName: 'FMHADMSD Events',
               message:
                 'Quarterly Stock takings of items/ records in the Headquarters and across the warehouses in the 36 States and Abuja  ', // Notification message
-              date: new Date('2023-06-17T09:00:00'), // Date and time of the notification
+              date: new Date('2023-06-18T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-08-15') {
             // Custom event on December 15
@@ -123,7 +123,7 @@ const General = ({navigation}) => {
                 'Supervision of the Design on the proposed Administrative building and lecture Halls @ the Federal School of Social Works, Emene, Enugu State', // Notification message
               date: new Date('2023-08-14T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-09-10') {
+          } else if (strTime === '2023-09-11') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Quarterly supervision and monitoring of all the Ministry’s projects in order to conform with specifications @ the Headquarters, States and Cluster offices',
@@ -134,9 +134,9 @@ const General = ({navigation}) => {
               channelName: 'FMHADMSD Events',
               message:
                 'Quarterly supervision and monitoring of all the Ministry’s projects in order to conform with specifications @ the Headquarters, States and Cluster offices  ', // Notification message
-              date: new Date('2023-09-09T09:00:00'), // Date and time of the notification
+              date: new Date('2023-09-10T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-09-17') {
+          } else if (strTime === '2023-09-18') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Quarterly Stock takings of items/ records in the Headquarters and across the warehouses in the 36 States and Abuja',
@@ -147,7 +147,7 @@ const General = ({navigation}) => {
               channelName: 'FMHADMSD Events',
               message:
                 'Quarterly Stock takings of items/ records in the Headquarters and across the warehouses in the 36 States and Abuja', // Notification message
-              date: new Date('2023-09-16T09:00:00'), // Date and time of the notification
+              date: new Date('2023-09-17T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-11-14') {
             // Custom event on December 15
@@ -188,7 +188,7 @@ const General = ({navigation}) => {
                 'Supervision of the establishment of Pilot Reception Centre for Emergencies Centres (NSIP Project) located at Kirfi (Katsina) and Bama (Borno) States', // Notification message
               date: new Date('2023-11-26T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-12-09') {
+          } else if (strTime === '2023-12-11') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Quarterly supervision and monitoring of all the Ministry’s projects in order to conform with specifications @ the Headquarters, States and Cluster offices ',
@@ -199,7 +199,7 @@ const General = ({navigation}) => {
               channelName: 'FMHADMSD Events',
               message:
                 'Quarterly supervision and monitoring of all the Ministry’s projects in order to conform with specifications @ the Headquarters, States and Cluster offices', // Notification message
-              date: new Date('2023-12-08T09:00:00'), // Date and time of the notification
+              date: new Date('2023-12-10T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-12-12') {
             // Custom event on December 15

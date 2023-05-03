@@ -24,6 +24,7 @@ const NationEmer = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -31,6 +32,7 @@ const NationEmer = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -52,23 +54,25 @@ const NationEmer = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Sensitization of Railway Operatives on safety and security management during Emergency Situations', // Notification message
               date: new Date('2023-05-08T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-06-10') {
+          } else if (strTime === '2023-06-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Convocation of Service Providers forum ',
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Convocation of Service Providers forum', // Notification message
-              date: new Date('2023-06-09T09:00:00'), // Date and time of the notification
+              date: new Date('2023-06-12T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-06-21') {
             // Custom event on December 15
@@ -77,35 +81,38 @@ const NationEmer = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Draft review of Relief Intervention Handbook @ Abuja', // Notification message
               date: new Date('2023-06-20T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-07-09') {
+          } else if (strTime === '2023-07-12') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Annual Staff Training Programme @ Abuja',
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Annual Staff Training Programme @ Abuja', // Notification message
-              date: new Date('2023-07-08T09:00:00'), // Date and time of the notification
+              date: new Date('2023-07-11T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-08-20') {
+          } else if (strTime === '2023-08-22') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Sensitization of Railway Operatives on safety and security management during Emergency Situations @ Abuja',
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Sensitization of Railway Operatives on safety and security management during Emergency Situations @ Abuja', // Notification message
-              date: new Date('2023-08-19T09:00:00'), // Date and time of the notification
+              date: new Date('2023-08-21T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-09-15') {
             // Custom event on December 15
@@ -114,6 +121,7 @@ const NationEmer = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Flood Consultative Workshop @ Abuja', // Notification message
@@ -126,6 +134,7 @@ const NationEmer = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -139,6 +148,7 @@ const NationEmer = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:

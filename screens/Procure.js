@@ -24,6 +24,7 @@ const Procure = ({navigation}) => {
 
   const createChannel = () => {
     PushNotification.createChannel({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -31,6 +32,7 @@ const Procure = ({navigation}) => {
 
   const handleNotification = item => {
     PushNotification.localNotification({
+      allowWhileIdle: true,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -52,6 +54,7 @@ const Procure = ({navigation}) => {
             });
             // Schedule local notification for April 15
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -65,6 +68,7 @@ const Procure = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -78,6 +82,7 @@ const Procure = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
@@ -91,24 +96,26 @@ const Procure = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Evaluation (Technical & Financial) @ the Ministry’s Conference Room', // Notification message
               date: new Date('2023-05-10T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-06-10') {
+          } else if (strTime === '2023-06-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Seeking approval for the commencement of the Ministerial Tender’s Board (MTB) for consideration of contract ',
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
                 'Seeking approval for the commencement of the Ministerial Tender’s Board (MTB) for consideration of contract', // Notification message
-              date: new Date('2023-06-09T09:00:00'), // Date and time of the notification
+              date: new Date('2023-06-12T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-06-15') {
             // Custom event on December 15
@@ -117,6 +124,7 @@ const Procure = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'MTB meeting for consideration of contracts', // Notification message
@@ -129,6 +137,7 @@ const Procure = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Submission of the MTB Extracts for HM’s concurrence', // Notification message
@@ -141,6 +150,7 @@ const Procure = ({navigation}) => {
               height: 50,
             });
             PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'Issuance of Contract Award Letters', // Notification message
