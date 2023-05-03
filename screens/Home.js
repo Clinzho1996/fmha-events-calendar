@@ -499,8 +499,10 @@ const Home = ({navigation}) => {
                 justifyContent: 'space-between',
                 alignItems: 'center',
               }}>
-              <Icon name="square" size={20} color="#99dd7a" />
-              <Text style={{width: 200, color: '#000'}}>{item.name}</Text>
+              <View style={{flexDirection: 'column'}}>
+                <Icon name="square" size={20} color="#99dd7a" />
+                <Text style={{width: 200, color: '#000'}}>{item.name}</Text>
+              </View>
               <Avatar.Text label="F" style={{backgroundColor: '#99dd7a'}} />
             </View>
           </Card.Content>
