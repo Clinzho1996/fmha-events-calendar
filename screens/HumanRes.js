@@ -208,23 +208,8 @@ const HumanRes = ({navigation}) => {
               allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
-              message:
-                'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium', // Notification message
-              date: new Date('2023-1-10T09:00:00'), // Date and time of the notification
-            });
-          } else if (strTime === '2023-06-12') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Award and Recognition with OHCSF',
-              height: 50,
-            });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium', // Notification message
-              date: new Date('2023-1-10T09:00:00'), // Date and time of the notification
+              message: 'Federal Civil Service Week', // Notification message
+              date: new Date('2023-06-08T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-06-15') {
             // Custom event on December 15
@@ -236,9 +221,8 @@ const HumanRes = ({navigation}) => {
               allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
-              message:
-                'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium', // Notification message
-              date: new Date('2023-1-10T09:00:00'), // Date and time of the notification
+              message: 'Health Talk for staff of the Ministry', // Notification message
+              date: new Date('2023-06-14T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-06-23') {
             // Custom event on December 15
@@ -251,36 +235,8 @@ const HumanRes = ({navigation}) => {
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message:
-                'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium', // Notification message
+                'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations', // Notification message
               date: new Date('2023-06-22T09:00:00'), // Date and time of the notification
-            });
-          } else if (strTime === '2023-06-06') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
-            });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium', // Notification message
-              date: new Date('2023-1-10T09:00:00'), // Date and time of the notification
-            });
-          } else if (strTime === '2023-06-07') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations ',
-              height: 50,
-            });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium', // Notification message
-              date: new Date('2023-1-10T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-04-01') {
             // Custom event on December 15
@@ -296,7 +252,7 @@ const HumanRes = ({navigation}) => {
                 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium', // Notification message
               date: new Date('2023-03-31T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-04-015') {
+          } else if (strTime === '2023-04-15') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Annual Nationwide Verification exercise in the Headquarters and Out-station  ',
@@ -338,6 +294,20 @@ const HumanRes = ({navigation}) => {
                 'Workers Day celebration in collaboration with the Union on the 1st @ the Eagle Square ', // Notification message
               date: new Date('2023-04-30T09:00:00'), // Date and time of the notification
             });
+          } else if (strTime === '2023-06-01') {
+            // Custom event on December 15
+            items[strTime].push({
+              name: 'Workers Day celebration in collaboration with the Union on the 1st @ the Eagle Square ',
+              height: 50,
+            });
+            PushNotification.localNotificationSchedule({
+              allowWhileIdle: true,
+              channelId: 'fmhadmsd-events',
+              channelName: 'FMHADMSD Events',
+              message:
+                'Workers Day celebration in collaboration with the Union on the 1st @ the Eagle Square ', // Notification message
+              date: new Date('2023-05-31T09:00:00'), // Date and time of the notification
+            });
           } else if (strTime === '2023-05-12') {
             // Custom event on December 15
             items[strTime].push({
@@ -351,20 +321,6 @@ const HumanRes = ({navigation}) => {
               message:
                 'Training Programmes for staff of the Ministry with the OHCSF', // Notification message
               date: new Date('2023-05-11T09:00:00'), // Date and time of the notification
-            });
-          } else if (strTime === '2023-06-01') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',
-              height: 50,
-            });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium', // Notification message
-              date: new Date('2023-05-31T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-06-14') {
             // Custom event on December 15
@@ -473,20 +429,6 @@ const HumanRes = ({navigation}) => {
               message:
                 'Junior Staff Promotion exercise for officers on SGL. 03 – 05 in the Headquarters and Out-stations', // Notification message
               date: new Date('2023-06-12T09:00:00'), // Date and time of the notification
-            });
-          } else if (strTime === '2023-06-06') {
-            // Custom event on December 15
-            items[strTime].push({
-              name: 'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations',
-              height: 50,
-            });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Senior Staff Promotion Examination for non-pool Officers on SGL. 06 – 13 in the Headquarters and Out-stations', // Notification message
-              date: new Date('2023-06-05T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-09-30') {
             // Custom event on December 15
@@ -598,7 +540,7 @@ const HumanRes = ({navigation}) => {
                 'Promotion Examination for Officers on SGL. 06 – 13 under the pool of the BPP', // Notification message
               date: new Date('2023-11-12T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-2-01') {
+          } else if (strTime === '2023-12-01') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Monthly Walking / Jogging exercise for MDAs every last Saturday @ the National Stadium',

@@ -197,7 +197,7 @@ const NationalCom = ({navigation}) => {
                 'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
               date: new Date('2023-10-09T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-10-21') {
+          } else if (strTime === '2023-10-19') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Sensitization and awareness raising on sexual reproductive health, child protection and financial literacy in identified IDP location',
@@ -209,9 +209,9 @@ const NationalCom = ({navigation}) => {
               channelName: 'FMHADMSD Events',
               message:
                 'Sensitization and awareness raising on sexual reproductive health, child protection and financial literacy in identified IDP location', // Notification message
-              date: new Date('2023-10-20T09:00:00'), // Date and time of the notification
+              date: new Date('2023-10-18T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-10-26') {
+          } else if (strTime === '2023-10-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'International Day for Disaster Risk Reduction ',
@@ -222,9 +222,9 @@ const NationalCom = ({navigation}) => {
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
               message: 'International Day for Disaster Risk Reduction ', // Notification message
-              date: new Date('2023-10-25T09:00:00'), // Date and time of the notification
+              date: new Date('2023-10-12T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-11-05') {
+          } else if (strTime === '2023-11-07') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Medical and Health Outreach in identifies IDP locations Nationwide',
@@ -236,7 +236,7 @@ const NationalCom = ({navigation}) => {
               channelName: 'FMHADMSD Events',
               message:
                 'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
-              date: new Date('2023-11-04T09:00:00'), // Date and time of the notification
+              date: new Date('2023-11-06T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-11-09') {
             // Custom event on December 15

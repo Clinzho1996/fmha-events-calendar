@@ -89,10 +89,10 @@ const Special = ({navigation}) => {
               message: 'International Day of Sign Languages on 23rd', // Notification message
               date: new Date('2023-09-22T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-04-25') {
+          } else if (strTime === '2023-09-25') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'International Week of the Deaf (Last Week)',
+              name: 'International Week of the Deaf (Last Week) from 25th to 29th September',
               height: 50,
             });
             // Schedule local notification for April 15
@@ -100,13 +100,14 @@ const Special = ({navigation}) => {
               allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
-              message: 'International Week of the Deaf (Last Week)', // Notification message
-              date: new Date('2023-04-24T09:00:00'), // Date and time of the notification
+              message:
+                'International Week of the Deaf (Last Week) from 25th to 29th September', // Notification message
+              date: new Date('2023-09-24T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-04-26') {
+          } else if (strTime === '2023-09-26') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'International Week of the Deaf (Last Week)',
+              name: 'International Week of the Deaf (Last Week) from 25th to 29th September',
               height: 50,
             });
             // Schedule local notification for April 15
@@ -114,13 +115,14 @@ const Special = ({navigation}) => {
               allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
-              message: 'International Week of the Deaf (Last Week)', // Notification message
-              date: new Date('2023-04-25T09:00:00'), // Date and time of the notification
+              message:
+                'International Week of the Deaf (Last Week) from 25th to 29th September', // Notification message
+              date: new Date('2023-09-25T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-04-27') {
+          } else if (strTime === '2023-09-27') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'International Week of the Deaf (Last Week)',
+              name: 'International Week of the Deaf (Last Week) from 25th to 29th September',
               height: 50,
             });
             // Schedule local notification for April 15
@@ -128,13 +130,14 @@ const Special = ({navigation}) => {
               allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
-              message: 'International Week of the Deaf (Last Week)', // Notification message
-              date: new Date('2023-04-26T09:00:00'), // Date and time of the notification
+              message:
+                'International Week of the Deaf (Last Week) from 25th to 29th September', // Notification message
+              date: new Date('2023-09-26T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-04-28') {
+          } else if (strTime === '2023-09-28') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'International Week of the Deaf (Last Week)',
+              name: 'International Week of the Deaf (Last Week) from 25th to 29th September',
               height: 50,
             });
             // Schedule local notification for April 15
@@ -142,13 +145,14 @@ const Special = ({navigation}) => {
               allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
-              message: 'International Week of the Deaf (Last Week)', // Notification message
-              date: new Date('2023-04-27T09:00:00'), // Date and time of the notification
+              message:
+                'International Week of the Deaf (Last Week) from 25th to 29th September', // Notification message
+              date: new Date('2023-09-27T09:00:00'), // Date and time of the notification
             });
-          } else if (strTime === '2023-04-29') {
+          } else if (strTime === '2023-09-29') {
             // Custom event on December 15
             items[strTime].push({
-              name: 'International Week of the Deaf (Last Week)',
+              name: 'International Week of the Deaf (Last Week) from 25th to 29th September',
               height: 50,
             });
             // Schedule local notification for April 15
@@ -156,8 +160,9 @@ const Special = ({navigation}) => {
               allowWhileIdle: true,
               channelId: 'fmhadmsd-events',
               channelName: 'FMHADMSD Events',
-              message: 'International Week of the Deaf (Last Week)', // Notification message
-              date: new Date('2023-04-28T09:00:00'), // Date and time of the notification
+              message:
+                'International Week of the Deaf (Last Week) from 25th to 29th September', // Notification message
+              date: new Date('2023-09-28T09:00:00'), // Date and time of the notification
             });
           } else if (strTime === '2023-10-15') {
             // Schedule local notification for April 15
