@@ -11,6 +11,7 @@ import {
   Image,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -21,12 +22,6 @@ const Onboarding = ({navigation}) => {
   const [hidden, setHidden] = useState(false);
 
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      navigation.navigate('Login');
-    }, 2000);
-  });
 
   const changeStatusBarVisibility = () => setHidden(!hidden);
   const [statusBarStyle, setStatusBarStyle] = useState(STYLES[0]);
@@ -49,6 +44,21 @@ const Onboarding = ({navigation}) => {
       setStatusBarTransition(TRANSITIONS[0]);
     } else {
       setStatusBarTransition(TRANSITIONS[transition]);
+    }
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      handleGetToken();
+    }, 2000);
+  });
+
+  const handleGetToken = async () => {
+    const dataToken = await AsyncStorage.getItem('AccessToken');
+    if (!dataToken) {
+      navigation.replace('Login');
+    } else {
+      navigation.replace('Loading');
     }
   };
 

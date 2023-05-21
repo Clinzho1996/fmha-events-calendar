@@ -53,150 +53,217 @@ const NationalDis = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Sensitization of Railway Operatives on safety and security management during Emergency Situations', // Notification message
-              date: new Date('2023-04-26T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-04-27T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Sensitization of Railway Operatives on safety and security management during Emergency Situations', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-05-23') {
             // Custom event on December 15
             items[strTime].push({
               name: 'National Summit on Access to Justice for PWDs on 23rd ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'National Summit on Access to Justice for PWDs on 23rd ', // Notification message
-              date: new Date('2023-05-22T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-05-23T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'National Summit on Access to Justice for PWDs on 23rd ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-05-27') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Children’s Day on the 27th ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Children’s Day on the 27th ', // Notification message
-              date: new Date('2023-05-26T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-05-27T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Children’s Day on the 27th ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-12') {
             // Custom event on December 15
             items[strTime].push({
               name: 'World Day against Child Labour on the 12th',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'World Day against Child Labour on the 12th', // Notification message
-              date: new Date('2023-06-11T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-12T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'World Day against Child Labour on the 12th', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Albinism Day in collaboration with the Albinism Association of Nigeria on the 13th',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Albinism Day in collaboration with the Albinism Association of Nigeria on the 13th', // Notification message
-              date: new Date('2023-06-12T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-13T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Albinism Day in collaboration with the Albinism Association of Nigeria on the 13th', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-19') {
             // Custom event on December 15
             items[strTime].push({
               name: 'International Day for the Elimination of Sexual Violence in Conflict on the 19th ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'International Day for the Elimination of Sexual Violence in Conflict on the 19th ', // Notification message
-              date: new Date('2023-06-18T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-19T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'International Day for the Elimination of Sexual Violence in Conflict on the 19th ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-07-23') {
             // Custom event on December 15
             items[strTime].push({
               name: 'National Summit on Accessibility and Launching of National Accessibility Regulation on the 23rd',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'National Summit on Accessibility and Launching of National Accessibility Regulation on the 23rd', // Notification message
-              date: new Date('2023-07-22T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-07-23T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'National Summit on Accessibility and Launching of National Accessibility Regulation on the 23rd', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-09-19') {
             // Custom event on December 15
             items[strTime].push({
               name: 'International Week for the Deaf in collaboration with the Nigerian National Association of the Deaf from 19th – 25th ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'International Week for the Deaf in collaboration with the Nigerian National Association of the Deaf from 19th – 25th ', // Notification message
-              date: new Date('2023-09-18T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-09-19T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'International Week for the Deaf in collaboration with the Nigerian National Association of the Deaf from 19th – 25th ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-10-05') {
             // Custom event on December 15
             items[strTime].push({
               name: 'White Cane Day in collaboration with the National Association of the Blind on the 5th ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'White Cane Day in collaboration with the National Association of the Blind on the 5th', // Notification message
-              date: new Date('2023-10-04T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-10-05T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'White Cane Day in collaboration with the National Association of the Blind on the 5th', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-11-25') {
             // Custom event on December 15
             items[strTime].push({
               name: '16 Days of Activism from the 25th',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: '16 Days of Activism from the 25th ', // Notification message
-              date: new Date('2023-11-24T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-11-25T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: '16 Days of Activism from the 25th ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-12-03') {
             // Custom event on December 15
             items[strTime].push({
               name: 'International Day for Persons with Disabilities on the 3rd',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'International Day for Persons with Disabilities on the 3rd', // Notification message
-              date: new Date('2023-12-02T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-12-01=3T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'International Day for Persons with Disabilities on the 3rd', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

@@ -53,68 +53,101 @@ const Govern = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'GEEP 2.0 Road Show from the 1st – 9th in the Six (6) geopolitical zones  ', // Notification message
-              date: new Date('2023-04-30T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-05-01T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'GEEP 2.0 Road Show from the 1st – 9th in the Six (6) geopolitical zones  ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-05') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Townhall Meeting from the 5th – 9th in the Six (6) geopolitical zones   ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Townhall Meeting from the 5th – 9th in the Six (6) geopolitical zones ', // Notification message
-              date: new Date('2023-06-04T09:00:00'), // Date and time of the notification
-            });
+
+            const eventDate = new Date('2023-06-05T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Townhall Meeting from the 5th – 9th in the Six (6) geopolitical zones ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-08-14') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Annual Retreat',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Annual Retreat', // Notification message
-              date: new Date('2023-08-13T09:00:00'), // Date and time of the notification
-            });
+
+            const eventDate = new Date('2023-08-14T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Annual Retreat', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-05-04') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Dashboard/GEEP Magazine from 4th – 9th @ Abuja. ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Dashboard/GEEP Magazine from 4th – 9th @ Abuja. ', // Notification message
-              date: new Date('2023-05-03T09:00:00'), // Date and time of the notification
-            });
+
+            const eventDate = new Date('2023-05-04T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Dashboard/GEEP Magazine from 4th – 9th @ Abuja. ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-12') {
             // Custom event on December 15
             items[strTime].push({
               name: 'FarmerMoni Enumeration Supervision from 12th – 24th in the Six (6) geopolitical zones ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'FarmerMoni Enumeration Supervision from 12th – 24th in the Six (6) geopolitical zones ', // Notification message
-              date: new Date('2023-06-11T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-12T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'FarmerMoni Enumeration Supervision from 12th – 24th in the Six (6) geopolitical zones ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

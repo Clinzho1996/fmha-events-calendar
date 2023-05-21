@@ -53,13 +53,19 @@ const Finance = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Cash Planning Training @ Lagos', // Notification message
-              date: new Date('2023-02-28T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-03-01T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Cash Planning Training @ Lagos', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-03-31') {
             // Custom event on December 15
             items[strTime].push({
@@ -68,13 +74,19 @@ const Finance = ({navigation}) => {
             });
 
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Closure of Capital Accounts on the 31st', // Notification message
-              date: new Date('2023-03-30T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-03-31T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Closure of Capital Accounts on the 31st', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-07-05') {
             // Custom event on December 15
             items[strTime].push({
@@ -82,13 +94,19 @@ const Finance = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: '2023 Budget Preparation @ Abuja', // Notification message
-              date: new Date('2023-07-04T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-07-05T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: '2023 Budget Preparation @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-07-03') {
             // Custom event on December 15
             items[strTime].push({
@@ -96,14 +114,20 @@ const Finance = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Budget Monitoring and Evaluation in the Six (6) geo-political zones', // Notification message
-              date: new Date('2023-07-02T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-07-03T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Budget Monitoring and Evaluation in the Six (6) geo-political zones', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-07-13') {
             // Custom event on December 15
             items[strTime].push({
@@ -111,13 +135,19 @@ const Finance = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Budget Defense @ Abuja', // Notification message
-              date: new Date('2023-07-12T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-07-13T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Budget Defense @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-08-15') {
             // Custom event on December 15
             items[strTime].push({
@@ -125,14 +155,20 @@ const Finance = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'IPSAS (International Public Sector Accounting  Standard Training and Workshop @ Kano', // Notification message
-              date: new Date('2023-08-14T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-08-15T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'IPSAS (International Public Sector Accounting  Standard Training and Workshop @ Kano', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-08-18') {
             // Custom event on December 15
             items[strTime].push({
@@ -140,13 +176,19 @@ const Finance = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: '2023 Budget Preparation @ Abuja', // Notification message
-              date: new Date('2023-08-17T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-08-18T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: '2023 Budget Preparation @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-08-25') {
             // Custom event on December 15
             items[strTime].push({
@@ -154,13 +196,19 @@ const Finance = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Budget Defense @ Abuja', // Notification message
-              date: new Date('2023-08-24T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-08-24T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Budget Defense @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-10-10') {
             // Custom event on December 15
             items[strTime].push({
@@ -168,14 +216,20 @@ const Finance = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Financial Modelling Training, reporting and revenue management', // Notification message
-              date: new Date('2023-10-09T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-10-10T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Financial Modelling Training, reporting and revenue management', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-11-16') {
             // Custom event on December 15
             items[strTime].push({
@@ -183,13 +237,19 @@ const Finance = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'ICAN Conference/ANAN MCPE @ Abuja', // Notification message
-              date: new Date('2023-11-15T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-11-16T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'ICAN Conference/ANAN MCPE @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

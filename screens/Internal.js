@@ -53,14 +53,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Monitoring and Evaluation of projects and programmes  in collaboration with relevant Departments in the six (6) geo-political zones', // Notification message
-              date: new Date('2023-02-28T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-03-01T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Monitoring and Evaluation of projects and programmes  in collaboration with relevant Departments in the six (6) geo-political zones', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-03-12') {
             // Custom event on December 15
             items[strTime].push({
@@ -68,14 +74,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Inspection of Federal School of Social Work in collaboration with the Social Development Department @ Emene – Enugu State', // Notification message
-              date: new Date('2023-03-11T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-03-12T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Inspection of Federal School of Social Work in collaboration with the Social Development Department @ Emene – Enugu State', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-03-16') {
             // Custom event on December 15
             items[strTime].push({
@@ -83,14 +95,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Inspection of Braille Press and Library Centres in collaboration with the Special Needs Department in the six (6) geo-political zones ', // Notification message
-              date: new Date('2023-03-15T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-03-16T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Inspection of Braille Press and Library Centres in collaboration with the Special Needs Department in the six (6) geo-political zones ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-10') {
             // Custom event on December 15
             items[strTime].push({
@@ -98,14 +116,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones', // Notification message
-              date: new Date('2023-06-09T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-10T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-13') {
             // Custom event on December 15
             items[strTime].push({
@@ -113,14 +137,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Inspection of Braille Press and Library Centres in collaboration with the Special Needs Department in the six (6) geo-political zones', // Notification message
-              date: new Date('2023-06-12T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-13T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Inspection of Braille Press and Library Centres in collaboration with the Special Needs Department in the six (6) geo-political zones', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-15') {
             // Custom event on December 15
             items[strTime].push({
@@ -128,13 +158,19 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Internal Auditing Training @ Lagos and katsina', // Notification message
-              date: new Date('2023-06-14T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-15T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Internal Auditing Training @ Lagos and katsina', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-23') {
             // Custom event on December 15
             items[strTime].push({
@@ -142,14 +178,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'ICAN / ANAN Mandatory Continues Professional Development (MCPD) @ Bauchi and Lagos', // Notification message
-              date: new Date('2023-06-22T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-23T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'ICAN / ANAN Mandatory Continues Professional Development (MCPD) @ Bauchi and Lagos', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-09-03') {
             // Custom event on December 15
             items[strTime].push({
@@ -157,14 +199,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones', // Notification message
-              date: new Date('2023-09-02T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-09-03T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-09-10') {
             // Custom event on December 15
             items[strTime].push({
@@ -172,14 +220,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Inspection of National Rehabilitation centre in collaboration with the Special Needs Department @ Abuja', // Notification message
-              date: new Date('2023-09-09T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-09-10T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Inspection of National Rehabilitation centre in collaboration with the Special Needs Department @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-09-25') {
             // Custom event on December 15
             items[strTime].push({
@@ -187,13 +241,19 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Internal Auditing Training @ Lagos and katsina', // Notification message
-              date: new Date('2023-09-24T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-09-25T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Internal Auditing Training @ Lagos and katsina', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-11-04') {
             // Custom event on December 15
             items[strTime].push({
@@ -201,14 +261,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Inspection of Braille Press and Library Centres in collaboration with the Special Needs Department in the six (6) geo-political zones', // Notification message
-              date: new Date('2023-11-03T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-11-04T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Inspection of Braille Press and Library Centres in collaboration with the Special Needs Department in the six (6) geo-political zones', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-11-22') {
             // Custom event on December 15
             items[strTime].push({
@@ -216,14 +282,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones', // Notification message
-              date: new Date('2023-11-21T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-11-22T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Monitoring and Evaluation of projects and programmes in the six (6) geo-political zones', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-12-04') {
             // Custom event on December 15
             items[strTime].push({
@@ -231,14 +303,20 @@ const Internal = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'ICAN / ANAN Mandatory Continues Professional Development (MCPD) @ Bauchi and Lagos', // Notification message
-              date: new Date('2023-12-03T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-12-04T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'ICAN / ANAN Mandatory Continues Professional Development (MCPD) @ Bauchi and Lagos', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

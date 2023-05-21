@@ -53,273 +53,393 @@ const NationalCom = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Commissioning of Resettlement Cities', // Notification message
-              date: new Date('2023-04-27T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-04-28T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Commissioning of Resettlement Cities', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-05-10') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Commissioning of Resettlement Cities',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Commissioning of Resettlement Cities', // Notification message
-              date: new Date('2023-05-09T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-05-10T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Commissioning of Resettlement Cities', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-05-01') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Workers / May Day Celebration on the 1st Executive Media Chat between the Honourable Minister and Editors',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Workers / May Day Celebration on the 1st Executive Media Chat between the Honourable Minister and Editors', // Notification message
-              date: new Date('2023-04-30T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-05-01T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Workers / May Day Celebration on the 1st Executive Media Chat between the Honourable Minister and Editors', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-09') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Sittings of the Eligibility Committee for Refugees (E.C) @ Abuja / Lagos',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Sittings of the Eligibility Committee for Refugees (E.C) @ Abuja / Lagos', // Notification message
-              date: new Date('2023-06-08T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-09T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Sittings of the Eligibility Committee for Refugees (E.C) @ Abuja / Lagos', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-20') {
             // Custom event on December 15
             items[strTime].push({
               name: 'World Refugee Day Celebration on the 20th',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'World Refugee Day Celebration on the 20th', // Notification message
-              date: new Date('2023-06-19T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-20T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'World Refugee Day Celebration on the 20th', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-07-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Medical and Health Outreach in identifies IDP locations Nationwide',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
-              date: new Date('2023-07-12T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-07-13T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-08-09') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Medical and Health Outreach in identifies IDP locations Nationwide ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
-              date: new Date('2023-08-08T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-08-09T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-08-19') {
             // Custom event on December 15
             items[strTime].push({
               name: 'World Humanitarian Day on the 19th',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'World Humanitarian Day on the 19th', // Notification message
-              date: new Date('2023-08-18T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-08-19T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'World Humanitarian Day on the 19th', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-09-04') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Sittings of the Eligibility Committee for Refugees (E.C) @ Abuja / Lagos ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Sittings of the Eligibility Committee for Refugees (E.C) @ Abuja / Lagos', // Notification message
-              date: new Date('2023-09-03T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-09-04T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Sittings of the Eligibility Committee for Refugees (E.C) @ Abuja / Lagos', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-09-20') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Medical and Health Outreach in identifies IDP locations Nationwide',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
-              date: new Date('2023-09-19T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-09-20T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-10-10') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Medical and Health Outreach in identifies IDP locations Nationwide',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
-              date: new Date('2023-10-09T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-10-10T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-10-19') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Sensitization and awareness raising on sexual reproductive health, child protection and financial literacy in identified IDP location',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Sensitization and awareness raising on sexual reproductive health, child protection and financial literacy in identified IDP location', // Notification message
-              date: new Date('2023-10-18T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-10-19T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Sensitization and awareness raising on sexual reproductive health, child protection and financial literacy in identified IDP location', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-10-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'International Day for Disaster Risk Reduction ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'International Day for Disaster Risk Reduction ', // Notification message
-              date: new Date('2023-10-12T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-10-13T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'International Day for Disaster Risk Reduction ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-11-07') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Medical and Health Outreach in identifies IDP locations Nationwide',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
-              date: new Date('2023-11-06T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-11-07T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Medical and Health Outreach in identifies IDP locations Nationwide', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-11-09') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Sensitization and awareness raising on sexual reproductive health, child protection and financial literacy in identified IDP location',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Sensitization and awareness raising on sexual reproductive health, child protection and financial literacy in identified IDP location', // Notification message
-              date: new Date('2023-11-08T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-11-09T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Sensitization and awareness raising on sexual reproductive health, child protection and financial literacy in identified IDP location', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-11-18') {
             // Custom event on December 15
             items[strTime].push({
               name: 'National IDPs Day Refugee Appeal Board',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'National IDPs Day Refugee Appeal Board ', // Notification message
-              date: new Date('2023-11-17T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-11-18T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'National IDPs Day Refugee Appeal Board ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-11-28') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Community Sensitization Programme on WASH, Nutrition, SGBV, Education and Psychosocial Counselling',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Community Sensitization Programme on WASH, Nutrition, SGBV, Education and Psychosocial Counselling', // Notification message
-              date: new Date('2023-11-27T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-11-28T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Community Sensitization Programme on WASH, Nutrition, SGBV, Education and Psychosocial Counselling', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-12-05') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Sittings of the Eligibility Committee for Refugees (E.C) @ Abuja / Lagos  ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Sittings of the Eligibility Committee for Refugees (E.C) @ Abuja / Lagos ', // Notification message
-              date: new Date('2023-12-04T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-12-05T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Sittings of the Eligibility Committee for Refugees (E.C) @ Abuja / Lagos ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-12-09') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Federation of Public Service Games',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Federation of Public Service Games', // Notification message
-              date: new Date('2023-12-08T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-12-09T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Federation of Public Service Games', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-12-18') {
             // Custom event on December 15
             items[strTime].push({
               name: 'International Migrants Day (National Migration Dialogue) on the 18th',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'International Migrants Day (National Migration Dialogue) on the 18th', // Notification message
-              date: new Date('2023-12-17T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-12-18T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'International Migrants Day (National Migration Dialogue) on the 18th', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

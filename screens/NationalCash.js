@@ -53,68 +53,98 @@ const NationalCash = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'NASSP-SU Flag off in collaboration with World Bank', // Notification message
-              date: new Date('2023-05-21T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-05-22T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'NASSP-SU Flag off in collaboration with World Bank', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-19') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Enrolment of Rural Economic Shock Response Cash Transfer (ESR-CT) Beneficiaries / Commencement of  ESR-CT and Regular cash transfer',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Enrolment of Rural Economic Shock Response Cash Transfer (ESR-CT) Beneficiaries / Commencement of  ESR-CT and Regular cash transfer', // Notification message
-              date: new Date('2023-06-18T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-19T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Enrolment of Rural Economic Shock Response Cash Transfer (ESR-CT) Beneficiaries / Commencement of  ESR-CT and Regular cash transfer', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-07-14') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Launch of the NCTO (CCT) Roadmap in collaboration with the World Bank',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Launch of the NCTO (CCT) Roadmap in collaboration with the World Bank', // Notification message
-              date: new Date('2023-07-13T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-07-14T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Launch of the NCTO (CCT) Roadmap in collaboration with the World Bank', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-08-04') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Innovation and Development Workshop',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Innovation and Development Workshop', // Notification message
-              date: new Date('2023-08-03T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-08-04T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Innovation and Development Workshop', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-08-22') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Development partners group forum in collaboration with World Bank',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Development partners group forum in collaboration with World Bank', // Notification message
-              date: new Date('2023-08-21T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-08-22T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Development partners group forum in collaboration with World Bank', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

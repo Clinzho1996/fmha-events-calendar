@@ -53,56 +53,80 @@ const NationalHome = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Presentation of the NHGSFP Policy to the Federal Executive Council', // Notification message
-              date: new Date('2023-04-16T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-04-17T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Presentation of the NHGSFP Policy to the Federal Executive Council', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-04-20') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Launching of the Farm to Kitchen Initiative in the 36 States and the F.C.T ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Launching of the Farm to Kitchen Initiative in the 36 States and the F.C.T', // Notification message
-              date: new Date('2023-04-19T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-04-20T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Launching of the Farm to Kitchen Initiative in the 36 States and the F.C.T', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-04-27') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Launching of the Alternate School  Programme (ASP) in collaboration with ITPN in the 36 States and the F.C.T ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Launching of the Alternate School  Programme (ASP) in collaboration with ITPN in the 36 States and the F.C.T   ', // Notification message
-              date: new Date('2023-04-26T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-04-27T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Launching of the Alternate School  Programme (ASP) in collaboration with ITPN in the 36 States and the F.C.T   ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-05-12') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Launching of the NHGSFP Digital ToolBox in collaboration with NBS @ F.C.T  ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Launching of the NHGSFP Digital ToolBox in collaboration with NBS @ F.C.T  ', // Notification message
-              date: new Date('2023-05-11T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-05-12T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Launching of the NHGSFP Digital ToolBox in collaboration with NBS @ F.C.T  ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

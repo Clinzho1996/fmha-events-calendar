@@ -53,108 +53,156 @@ const NationEmer = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Sensitization of Railway Operatives on safety and security management during Emergency Situations', // Notification message
-              date: new Date('2023-05-08T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-05-09T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Sensitization of Railway Operatives on safety and security management during Emergency Situations', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-13') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Convocation of Service Providers forum ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Convocation of Service Providers forum', // Notification message
-              date: new Date('2023-06-12T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-13T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Convocation of Service Providers forum', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-06-21') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Draft review of Relief Intervention Handbook @ Abuja',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Draft review of Relief Intervention Handbook @ Abuja', // Notification message
-              date: new Date('2023-06-20T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-06-21T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Draft review of Relief Intervention Handbook @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-07-12') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Annual Staff Training Programme @ Abuja',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Annual Staff Training Programme @ Abuja', // Notification message
-              date: new Date('2023-07-11T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-07-12T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Annual Staff Training Programme @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-08-22') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Sensitization of Railway Operatives on safety and security management during Emergency Situations @ Abuja',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Sensitization of Railway Operatives on safety and security management during Emergency Situations @ Abuja', // Notification message
-              date: new Date('2023-08-21T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-08-22T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Sensitization of Railway Operatives on safety and security management during Emergency Situations @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-09-15') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Flood Consultative Workshop @ Abuja',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Flood Consultative Workshop @ Abuja', // Notification message
-              date: new Date('2023-09-14T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-09-15T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Flood Consultative Workshop @ Abuja', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-11-09') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Sensitization of Railway Operatives on safety and security management during Emergency Situations ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Sensitization of Railway Operatives on safety and security management during Emergency Situations', // Notification message
-              date: new Date('2023-11-08T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-11-09T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Sensitization of Railway Operatives on safety and security management during Emergency Situations', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-12-19') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Technical Retreat/experience sharing for Zonal, Territorial and Operations Office Coordinators @ Abuja @ Abuja ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Technical Retreat/experience sharing for Zonal, Territorial and Operations Office Coordinators @ Abuja @ Abuja ', // Notification message
-              date: new Date('2023-12-18T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-12-19T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Technical Retreat/experience sharing for Zonal, Territorial and Operations Office Coordinators @ Abuja @ Abuja ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

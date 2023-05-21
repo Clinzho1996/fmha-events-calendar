@@ -53,42 +53,60 @@ const Npower = ({navigation}) => {
               height: 50,
             });
             // Schedule local notification for April 15
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Nationwide N-Build In-centre Graduation ceremony in collaboration with Councils on the 23rd', // Notification message
-              date: new Date('2023-04-22T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-04-23T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Nationwide N-Build In-centre Graduation ceremony in collaboration with Councils on the 23rd', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-04-23') {
             // Custom event on December 15
             items[strTime].push({
               name: 'N-Knowledge Expansion Graduation Ceremony in collaboration with TSPs in the geopolitical zones on the 23rd',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'N-Knowledge Expansion Graduation Ceremony in collaboration with TSPs in the geopolitical zones on the 23rd', // Notification message
-              date: new Date('2023-04-22T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-04-23T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'N-Knowledge Expansion Graduation Ceremony in collaboration with TSPs in the geopolitical zones on the 23rd', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else if (strTime === '2023-09-23') {
             // Custom event on December 15
             items[strTime].push({
               name: 'Nationwide End of N-Power Batch C2 Graduate Programme on the 23rd ',
               height: 50,
             });
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message:
-                'Nationwide End of N-Power Batch C2 Graduate Programme on the 23rd ', // Notification message
-              date: new Date('2023-09-22T09:00:00'), // Date and time of the notification
-            });
+            const eventDate = new Date('2023-09-23T09:00:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Nationwide End of N-Power Batch C2 Graduate Programme on the 23rd ', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

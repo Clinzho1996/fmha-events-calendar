@@ -1,6 +1,6 @@
-/* eslint-disable no-alert */
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
+/* eslint-disable no-alert */
 
 import {
   StyleSheet,
@@ -10,18 +10,13 @@ import {
   Dimensions,
   ActivityIndicator,
   TextInput,
-  KeyboardAvoidingView,
   TouchableOpacity,
   Image,
-  PermissionsAndroid,
-  Platform,
-  NativeModules,
 } from 'react-native';
 import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
-
-import PushNotification from 'react-native-push-notification';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const width = Dimensions.get('window').width;
 const height = Dimensions.get('window').height;
@@ -58,20 +53,11 @@ const Login = ({navigation}) => {
     }
   };
 
-  useEffect(() => {
-    createChannel();
-  });
-
-  const createChannel = () => {
-    PushNotification.createChannel({
-      channelId: 'fmhadmsd-events',
-      channelName: 'FMHADMSD Events',
-    });
-  };
-
   const handleLogin = async () => {
     if (password === 'fmha2023') {
-      navigation.navigate('Loading');
+      setIsLoading(true);
+      await AsyncStorage.setItem('AccessToken', 'signedIn');
+      navigation.navigate('Loading'); // Navigate to the next screen after successful login
     } else {
       setErrorMsg('Invalid password');
     }
