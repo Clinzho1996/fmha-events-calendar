@@ -7,7 +7,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
-import PushNotification from 'react-native-push-notification';
+import PushNotification, {Importance} from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -25,6 +25,7 @@ const Procure = ({navigation}) => {
   const createChannel = () => {
     PushNotification.createChannel({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -33,6 +34,7 @@ const Procure = ({navigation}) => {
   const handleNotification = item => {
     PushNotification.localNotification({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -60,6 +62,7 @@ const Procure = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -80,6 +83,7 @@ const Procure = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -100,6 +104,7 @@ const Procure = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -120,6 +125,7 @@ const Procure = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -140,6 +146,7 @@ const Procure = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -160,6 +167,7 @@ const Procure = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'MTB meeting for consideration of contracts', // Notification message
@@ -179,6 +187,7 @@ const Procure = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Submission of the MTB Extracts for HM’s concurrence', // Notification message
@@ -198,6 +207,7 @@ const Procure = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Issuance of Contract Award Letters', // Notification message

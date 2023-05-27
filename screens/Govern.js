@@ -7,7 +7,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
-import PushNotification from 'react-native-push-notification';
+import PushNotification, {Importance} from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -25,6 +25,7 @@ const Govern = ({navigation}) => {
   const createChannel = () => {
     PushNotification.createChannel({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -33,6 +34,7 @@ const Govern = ({navigation}) => {
   const handleNotification = item => {
     PushNotification.localNotification({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -60,6 +62,7 @@ const Govern = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -81,6 +84,7 @@ const Govern = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -102,6 +106,7 @@ const Govern = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Annual Retreat', // Notification message
@@ -122,6 +127,7 @@ const Govern = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Dashboard/GEEP Magazine from 4th – 9th @ Abuja. ', // Notification message
@@ -141,6 +147,7 @@ const Govern = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:

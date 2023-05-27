@@ -7,7 +7,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
-import PushNotification from 'react-native-push-notification';
+import PushNotification, {Importance} from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -25,6 +25,7 @@ const North = ({navigation}) => {
   const createChannel = () => {
     PushNotification.createChannel({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -33,6 +34,7 @@ const North = ({navigation}) => {
   const handleNotification = item => {
     PushNotification.localNotification({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -60,6 +62,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -80,6 +83,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'NEDC Seminar on the 1st ', // Notification message
@@ -99,6 +103,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -119,6 +124,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -139,6 +145,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -159,6 +166,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -179,6 +187,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Sensitization on drug abuse on the 2nd', // Notification message
@@ -198,6 +207,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -218,6 +228,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -238,6 +249,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -258,6 +270,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -278,6 +291,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Tree planting day (one house one tree) on the 12th ', // Notification message
@@ -297,6 +311,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -317,6 +332,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -337,6 +353,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'World Humanitarian Day on the 19th', // Notification message
@@ -356,6 +373,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -376,6 +394,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -396,6 +415,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -416,6 +436,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -436,6 +457,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -456,6 +478,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Sensitization on girl child on the 5th', // Notification message
@@ -475,6 +498,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -495,6 +519,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -515,6 +540,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -535,6 +561,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'NEDC Seminar on the 7th', // Notification message
@@ -554,6 +581,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'NEDC Games week on the 20th ', // Notification message
@@ -573,6 +601,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -593,6 +622,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -613,6 +643,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'NEDC end of year media parley on the 14th', // Notification message
@@ -632,6 +663,7 @@ const North = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:

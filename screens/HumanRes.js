@@ -7,7 +7,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
-import PushNotification from 'react-native-push-notification';
+import PushNotification, {Importance} from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -25,6 +25,7 @@ const HumanRes = ({navigation}) => {
   const createChannel = () => {
     PushNotification.createChannel({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -33,6 +34,7 @@ const HumanRes = ({navigation}) => {
   const handleNotification = item => {
     PushNotification.localNotification({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -60,6 +62,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -80,6 +83,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -100,6 +104,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Medical Test for all staff of the Ministry   ', // Notification message
@@ -119,6 +124,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -139,6 +145,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Health Talk for staff of the Ministry', // Notification message
@@ -158,6 +165,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -178,6 +186,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -198,6 +207,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -218,6 +228,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -238,6 +249,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -258,6 +270,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Union Week celebration', // Notification message
@@ -277,6 +290,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Federal Civil Service Week', // Notification message
@@ -296,6 +310,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Health Talk for staff of the Ministry', // Notification message
@@ -315,6 +330,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -335,6 +351,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -355,6 +372,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -375,6 +393,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -395,6 +414,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -415,6 +435,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -435,6 +456,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Union Week celebration', // Notification message
@@ -454,6 +476,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Federal Civil Service Week', // Notification message
@@ -473,6 +496,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Award and Recognition with OHCSF ', // Notification message
@@ -492,6 +516,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -512,6 +537,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Sports Seminar', // Notification message
@@ -531,6 +557,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -551,6 +578,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -571,6 +599,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -591,6 +620,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -611,6 +641,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Union Seminar', // Notification message
@@ -630,6 +661,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Health Talk', // Notification message
@@ -649,6 +681,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -669,6 +702,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -689,6 +723,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -709,6 +744,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -729,6 +765,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -749,6 +786,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -769,6 +807,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Federation of Public Service Games', // Notification message
@@ -788,6 +827,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -808,6 +848,7 @@ const HumanRes = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Health Talk', // Notification message
@@ -825,14 +866,15 @@ const HumanRes = ({navigation}) => {
               const notificationDate = new Date(
                 eventDate.getTime() - 24 * 60 * 60 * 1000,
               );
-            PushNotification.localNotificationSchedule({
-              allowWhileIdle: true,
-              channelId: 'fmhadmsd-events',
-              channelName: 'FMHADMSD Events',
-              message: 'Awards and Recognition with OHCSF', // Notification message
-              date: notificationDate, // Date and time of the notification
-            });
-          }
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                importance: Importance.HIGH,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: 'Awards and Recognition with OHCSF', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
           } else {
             const numItems = Math.floor(Math.random() * 3 + 1);
             for (let j = 0; j < numItems; j++) {

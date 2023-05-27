@@ -7,7 +7,7 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
-import PushNotification from 'react-native-push-notification';
+import PushNotification, {Importance} from 'react-native-push-notification';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -25,6 +25,7 @@ const Humanitarian = ({navigation}) => {
   const createChannel = () => {
     PushNotification.createChannel({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
@@ -33,6 +34,7 @@ const Humanitarian = ({navigation}) => {
   const handleNotification = item => {
     PushNotification.localNotification({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       title: 'FMHADMSD Events',
       message: item.name,
@@ -60,6 +62,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -81,6 +84,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -102,6 +106,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -123,6 +128,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -144,6 +150,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -165,6 +172,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -186,6 +194,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: ' World Refugees Day on 20th', // Notification message
@@ -206,6 +215,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'World Day against Human Trafficking on the 30th', // Notification message
@@ -226,6 +236,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'World Humanitarian Day on the 19th', // Notification message
@@ -246,6 +257,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'International Day for the Disappear on the 30th', // Notification message
@@ -266,6 +278,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'United Nations General Assembly in New York', // Notification message
@@ -286,6 +299,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -307,6 +321,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -328,6 +343,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'National Migration Dialogue', // Notification message
@@ -348,6 +364,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'United Nations Climate Change 2023 (Cop 28)', // Notification message
@@ -368,6 +385,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -389,6 +407,29 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message:
+                  'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
+          } else if (strTime === '2023-05-26') {
+            // Custom event on December 15
+            items[strTime].push({
+              name: 'Global Review Forum of the Global Compact on Refugees from 13th – 15th @ Geneva',
+              height: 50,
+            });
+            // Schedule local notification for April 15
+            const eventDate = new Date('2023-05-26T13:50:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -410,6 +451,7 @@ const Humanitarian = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:

@@ -3,11 +3,13 @@
 /* eslint-disable react/self-closing-comp */
 
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Text, Platform} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
-import PushNotification from 'react-native-push-notification';
+import PushNotification, {Importance} from 'react-native-push-notification';
+import BackgroundFetch from 'react-native-background-fetch';
+import {check, PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -22,20 +24,111 @@ const Home = ({navigation}) => {
     createChannel();
   });
 
+  useEffect(() => {
+    const requestNotificationPermission = async () => {
+      const alertPermission = await checkNotificationPermission('alert');
+      const soundPermission = await checkNotificationPermission('sound');
+      const badgePermission = await checkNotificationPermission('badge');
+
+      if (
+        alertPermission === RESULTS.DENIED ||
+        soundPermission === RESULTS.DENIED ||
+        badgePermission === RESULTS.DENIED
+      ) {
+        const requestedPermissions = [];
+
+        if (alertPermission === RESULTS.DENIED) {
+          requestedPermissions.push(PERMISSIONS.ANDROID.NOTIFICATIONS);
+        }
+        if (soundPermission === RESULTS.DENIED) {
+          requestedPermissions.push(PERMISSIONS.ANDROID.NOTIFICATIONS);
+        }
+        if (badgePermission === RESULTS.DENIED) {
+          requestedPermissions.push(PERMISSIONS.ANDROID.NOTIFICATIONS);
+        }
+
+        if (requestedPermissions.length > 0) {
+          requestPermissions(requestedPermissions);
+        }
+      }
+
+      // Check the notification permission status
+      PushNotification.checkPermissions(permissions => {
+        console.log('Notification Permissions:', permissions);
+      });
+    };
+
+    const checkNotificationPermission = async type => {
+      let permission;
+
+      if (Platform.OS === 'ios') {
+        permission = await check(PERMISSIONS.IOS[type]);
+      } else {
+        permission = await check(PERMISSIONS.ANDROID[type]);
+      }
+
+      return permission;
+    };
+
+    const requestPermissions = async permissions => {
+      try {
+        await request(permissions);
+      } catch (error) {
+        console.log('Error requesting permissions:', error);
+      }
+    };
+
+    requestNotificationPermission();
+
+    // Cleanup on component unmount
+    return () => {
+      // Cancel any pending notifications
+      PushNotification.cancelAllLocalNotifications();
+      // Clear the notification permission status
+      PushNotification.clearAllNotifications();
+    };
+  }, []);
+
+  useEffect(() => {
+    // Configure the background fetch
+    BackgroundFetch.configure(
+      {
+        minimumFetchInterval: 15, // Fetch interval in minutes (minimum 15 minutes)
+        stopOnTerminate: false, // Continue background fetch when the app is terminated
+        startOnBoot: true, // Start background fetch on device boot
+        enableHeadless: true, // Enable background fetch to run in headless mode
+        forceReload: false, // Force background fetch event even if it hasn't changed
+        requiredNetworkType: BackgroundFetch.NETWORK_TYPE_NONE, // Specify the required network connection
+      },
+      async taskId => {
+        // Background fetch event handler
+        console.log('[BackgroundFetch] Task ID:', taskId);
+
+        // Implement your logic for background fetch here
+        // You can fetch new data, update the notifications, etc.
+
+        BackgroundFetch.finish(taskId); // Call this when your background fetch task is completed
+      },
+      error => {
+        console.log('[BackgroundFetch] Failed to configure:', error);
+      },
+    );
+
+    // Start the background fetch
+    BackgroundFetch.start();
+
+    // Clean up the background fetch on component unmount
+    return () => {
+      BackgroundFetch.stop();
+    };
+  }, []);
+
   const createChannel = () => {
     PushNotification.createChannel({
       allowWhileIdle: true,
+      importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
-    });
-  };
-
-  const handleNotification = item => {
-    PushNotification.localNotification({
-      allowWhileIdle: true,
-      channelId: 'fmhadmsd-events',
-      title: 'FMHADMSD Events',
-      message: item.name,
     });
   };
 
@@ -60,6 +153,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -81,6 +175,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -101,6 +196,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -121,6 +217,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -141,6 +238,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'International Girls in ICT Day on the 27th ', // Notification message
@@ -160,6 +258,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'Workers / May Day on the 1st  @ the Eagle Square', // Notification message
@@ -179,6 +278,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'NEDC: NEDC Seminar on the 1st', // Notification message
@@ -198,6 +298,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -218,6 +319,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -238,6 +340,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -258,6 +361,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -278,6 +382,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -298,6 +403,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -318,6 +424,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -338,6 +445,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -358,6 +466,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -378,6 +487,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -398,6 +508,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -418,6 +529,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -438,6 +550,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -458,6 +571,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -478,6 +592,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -498,6 +613,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -518,6 +634,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message: 'NEDC: Sensitization on drug abuse on the 2nd', // Notification message
@@ -537,6 +654,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -557,6 +675,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -577,6 +696,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -597,10 +717,51 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
                   ' GEEP: Townhall Meeting from the 5th – 9th in the Six (6) geopolitical zones', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
+          } else if (strTime === '2023-05-26') {
+            // Custom event on December 15
+            items[strTime].push({
+              name: ' testing notifIcation',
+              height: 50,
+            });
+            const eventDate = new Date('2023-05-26T15:40:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                importance: Importance.HIGH,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: ' Please work i don tire', // Notification message
+                date: notificationDate, // Date and time of the notification
+              });
+            }
+          } else if (strTime === '2023-05-26') {
+            // Custom event on December 15
+            items[strTime].push({
+              name: ' testing notifIcation on real device',
+              height: 50,
+            });
+            const eventDate = new Date('2023-05-26T15:45:00');
+            if (eventDate > now) {
+              const notificationDate = new Date(
+                eventDate.getTime() - 24 * 60 * 60 * 1000,
+              );
+              PushNotification.localNotificationSchedule({
+                allowWhileIdle: true,
+                importance: Importance.HIGH,
+                channelId: 'fmhadmsd-events',
+                channelName: 'FMHADMSD Events',
+                message: ' Notification testing', // Notification message
                 date: notificationDate, // Date and time of the notification
               });
             }
@@ -617,6 +778,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -637,6 +799,7 @@ const Home = ({navigation}) => {
               );
               PushNotification.localNotificationSchedule({
                 allowWhileIdle: true,
+                importance: Importance.HIGH,
                 channelId: 'fmhadmsd-events',
                 channelName: 'FMHADMSD Events',
                 message:
@@ -665,11 +828,7 @@ const Home = ({navigation}) => {
 
   const renderItem = item => {
     return (
-      <TouchableOpacity
-        style={{marginRight: 10, marginTop: 17}}
-        onPress={() => {
-          handleNotification(item);
-        }}>
+      <TouchableOpacity style={{marginRight: 10, marginTop: 17}}>
         <Card
           style={{
             backgroundColor: '#fff',
