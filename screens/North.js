@@ -3,11 +3,14 @@
 /* eslint-disable react/self-closing-comp */
 
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Text, Platform} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PushNotification, {Importance} from 'react-native-push-notification';
+import BackgroundFetch from 'react-native-background-fetch';
+
+import messaging from '@react-native-firebase/messaging';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -19,27 +22,82 @@ const North = ({navigation}) => {
   const now = new Date();
 
   useEffect(() => {
-    createChannel();
-  });
+    // Request permission for notifications
+    messaging()
+      .requestPermission()
+      .then(() => {
+        // Get the FCM token
+        return messaging().getToken();
+      })
+      .then(token => {
+        console.log('FCM Token:', token);
+      })
+      .catch(error => {
+        console.log('Failed to get FCM token:', error);
+      });
 
-  const createChannel = () => {
+    // Configure background message handling
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      console.log('Message handled in the background:', remoteMessage);
+    });
+
+    // Create notification channel
+
     PushNotification.createChannel({
       allowWhileIdle: true,
       importance: Importance.HIGH,
       channelId: 'fmhadmsd-events',
       channelName: 'FMHADMSD Events',
     });
-  };
 
-  const handleNotification = item => {
-    PushNotification.localNotification({
-      allowWhileIdle: true,
-      importance: Importance.HIGH,
-      channelId: 'fmhadmsd-events',
-      title: 'FMHADMSD Events',
-      message: item.name,
+    //Set up notification listeners
+    PushNotification.configure({
+      // Called when a remote or local notification is received
+      onNotification: function (notification) {
+        console.log('Notification:', notification);
+      },
     });
-  };
+
+    return () => {
+      // Clean up notification listeners
+      PushNotification.removeAllDeliveredNotifications();
+      PushNotification.cancelAllLocalNotifications();
+    };
+  }, []);
+
+  useEffect(() => {
+    // Configure the background fetch
+    BackgroundFetch.configure(
+      {
+        minimumFetchInterval: 15, // Fetch interval in minutes (minimum 15 minutes)
+        stopOnTerminate: false, // Continue background fetch when the app is terminated
+        startOnBoot: true, // Start background fetch on device boot
+        enableHeadless: true, // Enable background fetch to run in headless mode
+        forceReload: false, // Force background fetch event even if it hasn't changed
+        requiredNetworkType: BackgroundFetch.NETWORK_TYPE_NONE, // Specify the required network connection
+      },
+      async taskId => {
+        // Background fetch event handler
+        console.log('[BackgroundFetch] Task ID:', taskId);
+
+        // Implement your logic for background fetch here
+        // You can fetch new data, update the notifications, etc.
+
+        BackgroundFetch.finish(taskId); // Call this when your background fetch task is completed
+      },
+      error => {
+        console.log('[BackgroundFetch] Failed to configure:', error);
+      },
+    );
+
+    // Start the background fetch
+    BackgroundFetch.start();
+
+    // Clean up the background fetch on component unmount
+    return () => {
+      BackgroundFetch.stop();
+    };
+  }, []);
 
   const loadItems = day => {
     setTimeout(() => {
@@ -48,14 +106,14 @@ const North = ({navigation}) => {
         const strTime = timeToString(time);
         if (!items[strTime]) {
           items[strTime] = [];
-          if (strTime === '2023-04-26') {
+          if (strTime === '2023-05-28') {
             // Custom event on February
             items[strTime].push({
               name: 'Distribution of Palliatives and Relief materials to IDPs and People of North East on the 26th',
               height: 50,
             });
             // Schedule local notification for April 15
-            const eventDate = new Date('2023-04-26T09:00:00');
+            const eventDate = new Date('2023-05-28T14:49:00');
             if (eventDate > now) {
               const notificationDate = new Date(
                 eventDate.getTime() - 24 * 60 * 60 * 1000,
@@ -692,11 +750,7 @@ const North = ({navigation}) => {
 
   const renderItem = item => {
     return (
-      <TouchableOpacity
-        style={{marginRight: 10, marginTop: 17}}
-        onPress={() => {
-          handleNotification(item);
-        }}>
+      <TouchableOpacity style={{marginRight: 10, marginTop: 17}}>
         <Card
           style={{
             backgroundColor: '#fff',

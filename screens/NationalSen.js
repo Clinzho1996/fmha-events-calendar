@@ -3,11 +3,13 @@
 /* eslint-disable react/self-closing-comp */
 
 import React, {useState, useEffect} from 'react';
-import {View, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Text, Platform} from 'react-native';
 import {Agenda} from 'react-native-calendars';
 import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PushNotification, {Importance} from 'react-native-push-notification';
+import BackgroundFetch from 'react-native-background-fetch';
+import {check, PERMISSIONS, request, RESULTS} from 'react-native-permissions';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -21,6 +23,106 @@ const NationalSen = ({navigation}) => {
   useEffect(() => {
     createChannel();
   });
+
+  useEffect(() => {
+    const requestNotificationPermission = async () => {
+      const alertPermission = await checkNotificationPermission('alert');
+      const soundPermission = await checkNotificationPermission('sound');
+      const badgePermission = await checkNotificationPermission('badge');
+
+      if (
+        alertPermission === RESULTS.DENIED ||
+        soundPermission === RESULTS.DENIED ||
+        badgePermission === RESULTS.DENIED
+      ) {
+        const requestedPermissions = [];
+
+        if (alertPermission === RESULTS.DENIED) {
+          requestedPermissions.push(PERMISSIONS.ANDROID.NOTIFICATIONS);
+        }
+        if (soundPermission === RESULTS.DENIED) {
+          requestedPermissions.push(PERMISSIONS.ANDROID.NOTIFICATIONS);
+        }
+        if (badgePermission === RESULTS.DENIED) {
+          requestedPermissions.push(PERMISSIONS.ANDROID.NOTIFICATIONS);
+        }
+
+        if (requestedPermissions.length > 0) {
+          requestPermissions(requestedPermissions);
+        }
+      }
+
+      // Check the notification permission status
+      PushNotification.checkPermissions(permissions => {
+        console.log('Notification Permissions:', permissions);
+      });
+    };
+
+    const checkNotificationPermission = async type => {
+      let permission;
+
+      if (Platform.OS === 'ios') {
+        permission = await check(PERMISSIONS.IOS[type]);
+      } else {
+        permission = await check(PERMISSIONS.ANDROID[type]);
+      }
+
+      return permission;
+    };
+
+    const requestPermissions = async permissions => {
+      try {
+        await request(permissions);
+      } catch (error) {
+        console.log('Error requesting permissions:', error);
+      }
+    };
+
+    requestNotificationPermission();
+
+    // Cleanup on component unmount
+    return () => {
+      // Cancel any pending notifications
+      PushNotification.cancelAllLocalNotifications();
+      // Clear the notification permission status
+      PushNotification.clearAllNotifications();
+    };
+  }, []);
+
+  useEffect(() => {
+    // Configure the background fetch
+    BackgroundFetch.configure(
+      {
+        minimumFetchInterval: 15, // Fetch interval in minutes (minimum 15 minutes)
+        stopOnTerminate: false, // Continue background fetch when the app is terminated
+        startOnBoot: true, // Start background fetch on device boot
+        enableHeadless: true, // Enable background fetch to run in headless mode
+        forceReload: false, // Force background fetch event even if it hasn't changed
+        requiredNetworkType: BackgroundFetch.NETWORK_TYPE_NONE, // Specify the required network connection
+      },
+      async taskId => {
+        // Background fetch event handler
+        console.log('[BackgroundFetch] Task ID:', taskId);
+
+        // Implement your logic for background fetch here
+        // You can fetch new data, update the notifications, etc.
+
+        BackgroundFetch.finish(taskId); // Call this when your background fetch task is completed
+      },
+      error => {
+        console.log('[BackgroundFetch] Failed to configure:', error);
+      },
+    );
+
+    // Start the background fetch
+    BackgroundFetch.start();
+
+    // Clean up the background fetch on component unmount
+    return () => {
+      BackgroundFetch.stop();
+    };
+  }, []);
+
 
   const createChannel = () => {
     PushNotification.createChannel({

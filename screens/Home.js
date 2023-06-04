@@ -9,7 +9,7 @@ import {Card, Avatar} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
 import PushNotification, {Importance} from 'react-native-push-notification';
 import BackgroundFetch from 'react-native-background-fetch';
-import {check, PERMISSIONS, request, RESULTS} from 'react-native-permissions';
+import messaging from '@react-native-firebase/messaging';
 
 const timeToString = time => {
   const date = new Date(time);
@@ -21,71 +21,46 @@ const Home = ({navigation}) => {
   const now = new Date();
 
   useEffect(() => {
-    createChannel();
-  });
-
-  useEffect(() => {
-    const requestNotificationPermission = async () => {
-      const alertPermission = await checkNotificationPermission('alert');
-      const soundPermission = await checkNotificationPermission('sound');
-      const badgePermission = await checkNotificationPermission('badge');
-
-      if (
-        alertPermission === RESULTS.DENIED ||
-        soundPermission === RESULTS.DENIED ||
-        badgePermission === RESULTS.DENIED
-      ) {
-        const requestedPermissions = [];
-
-        if (alertPermission === RESULTS.DENIED) {
-          requestedPermissions.push(PERMISSIONS.ANDROID.NOTIFICATIONS);
-        }
-        if (soundPermission === RESULTS.DENIED) {
-          requestedPermissions.push(PERMISSIONS.ANDROID.NOTIFICATIONS);
-        }
-        if (badgePermission === RESULTS.DENIED) {
-          requestedPermissions.push(PERMISSIONS.ANDROID.NOTIFICATIONS);
-        }
-
-        if (requestedPermissions.length > 0) {
-          requestPermissions(requestedPermissions);
-        }
-      }
-
-      // Check the notification permission status
-      PushNotification.checkPermissions(permissions => {
-        console.log('Notification Permissions:', permissions);
+    // Request permission for notifications
+    messaging()
+      .requestPermission()
+      .then(() => {
+        // Get the FCM token
+        return messaging().getToken();
+      })
+      .then(token => {
+        console.log('FCM Token:', token);
+      })
+      .catch(error => {
+        console.log('Failed to get FCM token:', error);
       });
-    };
 
-    const checkNotificationPermission = async type => {
-      let permission;
+    // Configure background message handling
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      console.log('Message handled in the background:', remoteMessage);
+    });
 
-      if (Platform.OS === 'ios') {
-        permission = await check(PERMISSIONS.IOS[type]);
-      } else {
-        permission = await check(PERMISSIONS.ANDROID[type]);
-      }
+    // Create notification channel
 
-      return permission;
-    };
+    PushNotification.createChannel({
+      allowWhileIdle: true,
+      importance: Importance.HIGH,
+      channelId: 'fmhadmsd-events',
+      channelName: 'FMHADMSD Events',
+    });
 
-    const requestPermissions = async permissions => {
-      try {
-        await request(permissions);
-      } catch (error) {
-        console.log('Error requesting permissions:', error);
-      }
-    };
+    //Set up notification listeners
+    PushNotification.configure({
+      // Called when a remote or local notification is received
+      onNotification: function (notification) {
+        console.log('Notification:', notification);
+      },
+    });
 
-    requestNotificationPermission();
-
-    // Cleanup on component unmount
     return () => {
-      // Cancel any pending notifications
+      // Clean up notification listeners
+      PushNotification.removeAllDeliveredNotifications();
       PushNotification.cancelAllLocalNotifications();
-      // Clear the notification permission status
-      PushNotification.clearAllNotifications();
     };
   }, []);
 
@@ -122,15 +97,6 @@ const Home = ({navigation}) => {
       BackgroundFetch.stop();
     };
   }, []);
-
-  const createChannel = () => {
-    PushNotification.createChannel({
-      allowWhileIdle: true,
-      importance: Importance.HIGH,
-      channelId: 'fmhadmsd-events',
-      channelName: 'FMHADMSD Events',
-    });
-  };
 
   const loadItems = day => {
     setTimeout(() => {
@@ -725,13 +691,13 @@ const Home = ({navigation}) => {
                 date: notificationDate, // Date and time of the notification
               });
             }
-          } else if (strTime === '2023-05-26') {
+          } else if (strTime === '2023-05-28') {
             // Custom event on December 15
             items[strTime].push({
               name: ' testing notifIcation',
               height: 50,
             });
-            const eventDate = new Date('2023-05-26T15:40:00');
+            const eventDate = new Date('2023-05-28T14:40:00');
             if (eventDate > now) {
               const notificationDate = new Date(
                 eventDate.getTime() - 24 * 60 * 60 * 1000,
